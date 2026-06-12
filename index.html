@@ -270,9 +270,9 @@
 // ══════════════════════════════════════════
 //  CONFIG & DATA (loaded from trades.js)
 // ══════════════════════════════════════════
-const CAPITAL    = (window.PORTFOLIO?.startingCapital) || 100000;
-const TRADES_ALL = (window.TRADES) || [];
-const NOTES_ALL  = (window.DAILY_NOTES) || [];
+let CAPITAL    = 100000;
+let TRADES_ALL = [];
+let NOTES_ALL  = [];
 const EOD_SNAPS  = (window.EOD_SNAPSHOTS) || [];
 
 // Returns most recent EOD close record for a ticker
@@ -715,4 +715,9 @@ function renderPositions() {
 //  INIT
 // ══════════════════════════════════════════
 async function fullRefresh() {
-    await Promise.
+    await Promise.all([refreshWL(), refreshOptionMids()]);
+    renderPositions();
+}
+
+function init() {
+   
