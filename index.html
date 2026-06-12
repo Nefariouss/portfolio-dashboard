@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full YOLO — Autonomous</title>
-    <script src="trades.js"></script>
+    <script>
+    // Fetch trades.js fresh on every load — bypasses GitHub Pages CDN cache
+    window._tradesReady = fetch('trades.js?nocache=' + Date.now(), { cache: 'no-store' })
+        .then(r => r.text())
+        .then(code => { eval(code); })
+        .catch(() => { window.TRADES = []; window.PORTFOLIO = {}; window.DAILY_NOTES = []; window.EOD_SNAPSHOTS = []; });
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
         *{margin:0;padding:0;box-sizing:border-box;}
@@ -709,21 +715,4 @@ function renderPositions() {
 //  INIT
 // ══════════════════════════════════════════
 async function fullRefresh() {
-    await Promise.all([refreshWL(), refreshOptionMids()]);
-    renderPositions();
-}
-
-function init() {
-    renderWL();
-    renderPositions();
-    renderEOD();
-    fullRefresh();
-    setInterval(fullRefresh, 60 * 1000);      // real data every 60s
-    setInterval(renderPositions, 15 * 1000);  // recalc display every 15s
-}
-
-init();
-</script>
-</body>
-</html>
-        
+    await Promise.
