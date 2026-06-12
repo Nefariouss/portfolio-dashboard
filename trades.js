@@ -91,6 +91,58 @@ window.TRADES = [
         setupType: 'BEAR · Lottery · 0DTE Put · DEEP OTM'
     },
 
+    // ── TRADE T004 ───────────────────────────────────────────────
+    {
+        id: 'T004',
+        date: '2026-06-12',
+        ticker: 'QQQ',
+        direction: 'call',
+        strike: 720,
+        expiry: '2026-06-12',
+        contracts: 571,
+        entryPremium: 3.50,
+        entryTime: '09:25',
+        entryUnderlying: 716.31,
+        entryMinutesRemaining: 395,
+        exitPremium: null,
+        exitTime: null,
+        exitUnderlying: null,
+        status: 'open',
+        pnlOverride: null,
+        thesis: 'Iran peace deal + UMich beat = risk-on full send. CORE LEG (46% of $436,970 = ~$200K). UMich June prelim: 48.9 vs 46 expected — beat. 1yr inflation expectations dropped 4.8%→4.6%, 5yr 3.9%→3.4%. Iran deal removing geopolitical overhang that drove T001-T003 bearish bets. Strait of Hormuz reopening = oil down = inflation narrative softens = QQQ rips hardest as rate-sensitive tech index. SpaceX Nasdaq IPO adding tech-specific bid flow all day. QQQ gapped $26 from $689.74 close to $716 — entering $720C (slight OTM) to avoid buying peak, capture next leg higher.',
+        invalidation: 'QQQ reverses below $708 — gap fill = bull thesis broken, cut immediately',
+        target: 'QQQ $725-730 by close. Iran deal signed intraday could push $735+.',
+        cost: 199850,
+        risk: 'HIGH',
+        setupType: 'BULL · Iran Relief + UMich Beat · 0DTE Call · CORE'
+    },
+
+    // ── TRADE T005 ───────────────────────────────────────────────
+    {
+        id: 'T005',
+        date: '2026-06-12',
+        ticker: 'QQQ',
+        direction: 'call',
+        strike: 730,
+        expiry: '2026-06-12',
+        contracts: 1083,
+        entryPremium: 0.60,
+        entryTime: '09:25',
+        entryUnderlying: 716.31,
+        entryMinutesRemaining: 395,
+        exitPremium: null,
+        exitTime: null,
+        exitUnderlying: null,
+        status: 'open',
+        pnlOverride: null,
+        thesis: 'Iran deal tail risk lottery. LOTTERY LEG (15% of $436,970 = ~$65K). If Iran deal formally signed intraday, oil collapses, QQQ could rip $20-30 from open. $730C captures that tail — 2% OTM at entry, nearly worthless if deal stalls, massive payout if deal confirmed and market squeezes into close.',
+        invalidation: 'QQQ stays below $728 at close — expires worthless, acceptable outcome',
+        target: 'QQQ above $730 at close. Full intrinsic payout + any remaining time value.',
+        cost: 64980,
+        risk: 'EXTREME',
+        setupType: 'BULL · Iran Deal Lottery · 0DTE Call · DEEP OTM'
+    },
+
     // ── FUTURE TRADES GO HERE ────────────────────────────────────
     // Claude will add new entries below as trades are executed
 
