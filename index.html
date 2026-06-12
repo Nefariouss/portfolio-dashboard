@@ -957,4 +957,27 @@ function renderPositions() {
 
 // ══════════════════════════════════════════
 //  INIT
-// ══════════�
+// ══════════════════════════════════════════
+async function fullRefresh() {
+    await Promise.all([refreshWL(), refreshOptionMids()]);
+    renderPositions();
+}
+
+function init() {
+    renderEOD();
+    renderWL();
+    fullRefresh();
+    setInterval(fullRefresh, 60 * 1000);
+    setInterval(renderPositions, 15 * 1000);
+    document.getElementById('refreshBtn').addEventListener('click', fullRefresh);
+}
+
+(window._tradesReady || Promise.resolve()).then(() => {
+    CAPITAL    = window.PORTFOLIO?.startingCapital || 100000;
+    TRADES_ALL = window.TRADES || [];
+    NOTES_ALL  = window.DAILY_NOTES || [];
+    init();
+});
+</script>
+</body>
+</html>
