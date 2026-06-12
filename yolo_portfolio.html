@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0DTE Terminal — Autonomous</title>
+    <script src="trades.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        *{margin:0;padding:0;box-sizing:border-box;}
+        :root{
+            --bg:#060810;--card:#0d0f18;--card2:#131623;--border:#1c2035;
+            --green:#00d4aa;--red:#ff4455;--yellow:#ffc832;--blue:#4da6ff;
+            --purple:#a78bfa;--accent:#ff6b35;--text:#dde3f0;--dim:#50607a;
+        }
+        body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;padding:20px 24px;max-width:1280px;margin:0 auto;}
+
+        /* HEADER */
+        .hdr{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--border);margin-bottom:20px;flex-wrap:wrap;gap:12px;}
+        .title{font-size:22px;font-weight:700;background:linear-gradient(135deg,#ff6b35,#ffc832);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+        .sub{font-size:12px;color:var(--dim);margin-top:4px;display:flex;align-items:center;gap:8px;}
+        .live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;animation:blink 2s ease-in-out infinite;}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+        .auto-badge{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);color:var(--purple);font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;display:flex;align-items:center;gap:6px;}
+        .btn{background:var(--card2);border:1px solid var(--border);color:var(--text);padding:8px 16px;border-radius:8px;cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;transition:all .18s;}
+        .btn:hover{border-color:var(--accent);color:var(--accent);}
+        .btn.loading{opacity:.5;cursor:not-allowed;}
+
+        /* ACCOUNT GRID */
+        .acct-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px;}
+        .acard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;}
+        .acard-label{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin-bottom:8px;}
+        .acard-val{font-family:'Space Mono',monospace;font-size:22px;font-weight:700;line-height:1;}
+        .acard-sub{font-size:11px;color:var(--dim);margin-top:5px;}
+        .green{color:var(--green);}.red{color:var(--red);}.yellow{color:var(--yellow);}.blue{color:var(--blue);}.purple{color:var(--purple);}
+
+        /* LAYOUT */
+        .main{display:grid;grid-template-columns:1fr 320px;gap:16px;align-items:start;}
+
+        /* PANELS */
+        .panel{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:16px;}
+        .phdr{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;background:var(--card2);border-bottom:1px solid var(--border);}
+        .ptitle{font-size:13px;font-weight:600;}
+
+        /* WATCHLIST */
+        .wl-row{display:grid;grid-template-columns:repeat(5,1fr);}
+        .wl-cell{padding:13px 15px;border-right:1px solid var(--border);}
+        .wl-cell:last-child{border-right:none;}
+        .wl-ticker{font-family:'Space Mono',monospace;font-size:13px;font-weight:700;margin-bottom:3px;}
+        .wl-price{font-family:'Space Mono',monospace;font-size:17px;font-weight:700;}
+        .wl-chg{font-size:11px;margin-top:2px;}
+        .wl-sep{height:1px;background:var(--border);margin:7px 0 5px;}
+        .wl-eod-row{display:flex;align-items:center;gap:5px;margin-top:2px;}
+        .wl-eod-price{font-family:'Space Mono',monospace;font-size:12px;color:var(--text);}
+        .wl-eod-chg{font-size:10px;}
+        .wl-eod-label{font-size:9px;background:rgba(255,200,50,.1);color:var(--yellow);border:1px solid rgba(255,200,50,.2);border-radius:3px;padding:1px 5px;font-weight:600;letter-spacing:.4px;}
+        .wl-eod-date{font-size:9.5px;color:var(--dim);margin-top:1px;}
+        .wl-vs{font-size:10px;margin-top:3px;}
+        .sk{display:inline-block;width:50px;height:12px;background:var(--border);border-radius:2px;animation:sh 1.4s ease-in-out infinite;}
+        @keyframes sh{0%,100%{opacity:.3}50%{opacity:.65}}
+        /* EOD HISTORY PANEL */
+        .eod-hist-row{display:grid;grid-template-columns:70px repeat(5,1fr);padding:9px 16px;border-top:1px solid var(--border);font-size:11.5px;align-items:center;}
+        .eod-hist-hdr{background:var(--card2);font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--dim);font-weight:600;border-top:none;}
+        .eod-note{padding:9px 16px;font-size:11px;color:var(--dim);border-top:1px solid var(--border);line-height:1.5;font-style:italic;}
+
+        /* OPEN POSITIONS */
+        .pos-card{border-bottom:1px solid var(--border);padding:18px 20px;}
+        .pos-card:last-child{border-bottom:none;}
+        .pos-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
+        .pos-left{}
+        .pos-name{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
+        .pos-ticker{font-family:'Space Mono',monospace;font-size:18px;font-weight:700;}
+        .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase;}
+        .badge-put{background:rgba(255,68,85,.12);color:var(--red);}
+        .badge-call{background:rgba(0,212,170,.12);color:var(--green);}
+        .badge-open{background:rgba(77,166,255,.12);color:var(--blue);}
+        .badge-closed{background:rgba(80,96,122,.12);color:var(--dim);}
+        .badge-expired{background:rgba(80,96,122,.12);color:var(--dim);}
+        .badge-risk{background:rgba(255,107,53,.12);color:var(--accent);font-size:9px;}
+        .pos-detail{font-size:12px;color:var(--dim);}
+        .pos-pnl{text-align:right;}
+        .pos-pnl-val{font-family:'Space Mono',monospace;font-size:22px;font-weight:700;}
+        .pos-pnl-pct{font-size:12px;margin-top:3px;}
+        .pos-pnl-cost{font-size:11px;color:var(--dim);margin-top:2px;}
+
+        /* METRICS ROW */
+        .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px;}
+        .metric{background:var(--card2);border-radius:7px;padding:10px 12px;}
+        .metric-label{font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--dim);margin-bottom:4px;}
+        .metric-val{font-family:'Space Mono',monospace;font-size:15px;font-weight:700;}
+        .mono{font-family:'Space Mono',monospace;}
+
+        /* THESIS */
+        .thesis-box{background:var(--card2);border-radius:8px;padding:14px;margin-top:10px;}
+        .thesis-label{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--dim);margin-bottom:7px;}
+        .thesis-text{font-size:12px;color:var(--text);line-height:1.6;}
+        .thesis-row{display:flex;gap:12px;margin-top:10px;}
+        .thesis-tag{flex:1;background:var(--bg);border-radius:6px;padding:8px 10px;}
+        .thesis-tag-label{font-size:9.5px;text-transform:uppercase;letter-spacing:.7px;color:var(--dim);margin-bottom:3px;}
+        .thesis-tag-val{font-size:11.5px;line-height:1.4;}
+
+        /* TRADE HISTORY */
+        .hist-row{display:grid;grid-template-columns:80px 1.5fr 1fr 1fr 1fr 1fr;padding:11px 16px;border-top:1px solid var(--border);font-size:12px;align-items:center;}
+        .hist-hdr{background:var(--card2);font-size:10.5px;text-transform:uppercase;letter-spacing:.7px;color:var(--dim);font-weight:600;border-top:none;}
+        .hist-scroll{max-height:300px;overflow-y:auto;}
+
+        /* RIGHT COLUMN */
+        .ctx-row{display:flex;justify-content:space-between;padding:9px 16px;border-top:1px solid var(--border);font-size:12px;}
+        .ctx-row:first-child{border-top:none;}
+        .ctx-key{color:var(--dim);}
+
+        .stat-g{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px 16px;}
+        .stat-item{background:var(--card2);border-radius:7px;padding:10px;}
+        .stat-label{font-size:9.5px;text-transform:uppercase;letter-spacing:.7px;color:var(--dim);margin-bottom:4px;}
+        .stat-val{font-family:'Space Mono',monospace;font-size:17px;font-weight:700;}
+
+        .note-item{padding:12px 16px;border-top:1px solid var(--border);font-size:12px;color:var(--dim);line-height:1.55;}
+        .note-item:first-child{border-top:none;}
+        .note-date{font-size:10px;color:var(--accent);margin-bottom:5px;font-weight:600;}
+
+        .empty{padding:28px;text-align:center;color:var(--dim);font-size:12px;}
+
+        /* PNL BAR */
+        .pnl-track{height:4px;background:var(--border);border-radius:2px;margin-top:6px;}
+        .pnl-fill{height:100%;border-radius:2px;transition:width .5s ease;}
+
+        /* MARKET STATUS */
+        .mkt-status{font-size:11px;padding:3px 10px;border-radius:4px;font-weight:600;}
+        .mkt-open{background:rgba(0,212,170,.12);color:var(--green);}
+        .mkt-closed{background:rgba(80,96,122,.12);color:var(--dim);}
+
+        @media(max-width:900px){.main{grid-template-columns:1fr;}.acct-grid{grid-template-columns:repeat(3,1fr);}.wl-row{grid-template-columns:repeat(3,1fr);}}
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+    <div>
+        <div class="title">⚡ 0DTE Terminal</div>
+        <div class="sub">
+            <span class="live-dot"></span>
+            $162K Autonomous Portfolio · Full Send Mode · Jun 10, 2026 EOD
+            · <span id="lastRefresh" style="color:var(--dim)">refreshing…</span>
+        </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center;">
+        <div class="auto-badge">🤖 Autonomous — Claude is trading</div>
+        <button class="btn" onclick="fullRefresh()" id="refreshBtn">⟳ Refresh</button>
+    </div>
+</div>
+
+<!-- ACCOUNT SUMMARY -->
+<div class="acct-grid">
+    <div class="acard">
+        <div class="acard-label">Account Value</div>
+        <div class="acard-val" id="acctVal">$100,000</div>
+        <div class="acard-sub">Started: $100,000</div>
+    </div>
+    <div class="acard">
+        <div class="acard-label">Total P&amp;L</div>
+        <div class="acard-val" id="totalPnl">—</div>
+        <div class="acard-sub" id="totalPnlPct">Awaiting close</div>
+    </div>
+    <div class="acard">
+        <div class="acard-label">Today's P&amp;L</div>
+        <div class="acard-val" id="todayPnl">—</div>
+        <div class="acard-sub" id="todayPnlSub" style="font-size:11px;color:var(--dim)"></div>
+    </div>
+    <div class="acard">
+        <div class="acard-label">Cash Available</div>
+        <div class="acard-val blue" id="cashVal">$20,000</div>
+        <div class="acard-sub" id="cashPct">20.0% of capital</div>
+    </div>
+    <div class="acard">
+        <div class="acard-label">Open Exposure</div>
+        <div class="acard-val yellow" id="exposure">$80,000</div>
+        <div class="acard-sub" id="exposurePct">80.0% deployed</div>
+    </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="main">
+<div>
+
+    <!-- WATCHLIST -->
+    <div class="panel">
+        <div class="phdr">
+            <span class="ptitle">📡 Live Watchlist</span>
+            <span style="font-size:11px;color:var(--dim)" id="wlStamp">—</span>
+        </div>
+        <div class="wl-row" id="wlGrid"></div>
+    </div>
+
+    <!-- OPEN POSITIONS -->
+    <div class="panel">
+        <div class="phdr">
+            <span class="ptitle">🔥 Open Positions</span>
+            <span class="badge badge-open" id="openBadge">0 open</span>
+        </div>
+        <div id="openPositions"><div class="empty">No open positions</div></div>
+    </div>
+
+    <!-- CLOSED TRADES -->
+    <div class="panel">
+        <div class="phdr">
+            <span class="ptitle">📋 Trade History</span>
+            <span style="font-size:11px;color:var(--dim)" id="histSub">—</span>
+        </div>
+        <div id="tradeHistory"><div class="empty">No closed trades yet</div></div>
+    </div>
+
+</div>
+<div>
+
+    <!-- MARKET CONTEXT -->
+    <div class="panel">
+        <div class="phdr">
+            <span class="ptitle">🌍 Market Context</span>
+            <span class="mkt-status" id="mktStatus">—</span>
+        </div>
+        <div>
+            <div class="ctx-row"><span class="ctx-key">SPY</span><span class="mono red" id="ctx-spy">$728.45 ▼ −2.02%</span></div>
+            <div class="ctx-row"><span class="ctx-key">QQQ</span><span class="mono red">$706.67 ▼ high vol</span></div>
+            <div class="ctx-row"><span class="ctx-key">VIX</span><span class="mono yellow">18.92</span></div>
+            <div class="ctx-row"><span class="ctx-key">Oil (WTI)</span><span class="mono red">~$90 ▲</span></div>
+            <div class="ctx-row"><span class="ctx-key">CPI May</span><span class="mono red">4.2% YoY 🔥 Hot</span></div>
+            <div class="ctx-row"><span class="ctx-key">Next Event</span><span class="mono yellow">PPI · Tomorrow 8:30 AM ET</span></div>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="panel">
+        <div class="phdr"><span class="ptitle">📊 Stats</span></div>
+        <div class="stat-g">
+            <div class="stat-item"><div class="stat-label">Win Rate</div><div class="stat-val purple" id="winRate">—</div></div>
+            <div class="stat-item"><div class="stat-label">Total Trades</div><div class="stat-val" id="totalTrades">0</div></div>
+            <div class="stat-item"><div class="stat-label">Best Trade</div><div class="stat-val green" id="bestTrade">—</div></div>
+            <div class="stat-item"><div class="stat-label">Worst Trade</div><div class="stat-val red" id="worstTrade">—</div></div>
+            <div class="stat-item"><div class="stat-label">Avg Win $</div><div class="stat-val green" id="avgWin">—</div></div>
+            <div class="stat-item"><div class="stat-label">Avg Loss $</div><div class="stat-val red" id="avgLoss">—</div></div>
+        </div>
+    </div>
+
+    <!-- EOD CLOSES HISTORY -->
+    <div class="panel">
+        <div class="phdr">
+            <span class="ptitle">📅 EOD Closes</span>
+            <span style="font-size:11px;color:var(--dim)" id="eodSub">—</span>
+        </div>
+        <div id="eodPanel"><div class="empty">No EOD snapshots yet</div></div>
+    </div>
+
+    <!-- CLAUDE'S NOTES -->
+    <div class="panel">
+        <div class="phdr"><span class="ptitle">🧠 Trade Reasoning</span></div>
+        <div id="dailyNotes"><div class="empty">No notes yet</div></div>
+    </div>
+
+</div>
+</div>
+
+<script>
+// ══════════════════════════════════════════
+//  CONFIG & DATA (loaded from trades.js)
+// ══════════════════════════════════════════
+const CAPITAL    = (window.PORTFOLIO?.startingCapital) || 100000;
+const TRADES_ALL = (window.TRADES) || [];
+const NOTES_ALL  = (window.DAILY_NOTES) || [];
+const EOD_SNAPS  = (window.EOD_SNAPSHOTS) || [];
+
+// Returns most recent EOD close record for a ticker
+function getEOD(ticker) {
+    for (let i = EOD_SNAPS.length - 1; i >= 0; i--) {
+        const s = EOD_SNAPS[i];
+        const close = s.closes?.[ticker];
+        if (close != null) return { date: s.date, close, chg: s.changes?.[ticker] ?? null };
+    }
+    return null;
+}
+
+// ══════════════════════════════════════════
+//  WATCHLIST
+// ══════════════════════════════════════════
+const WL = [
+    { ticker:'SPY',  color:'#4da6ff', initPx:728.45, initChg:-2.02 },
+    { ticker:'QQQ',  color:'#a78bfa', initPx:706.67, initChg:-2.60 },
+    { ticker:'NVDA', color:'#76c7f0', initPx:207.77, initChg:null  },
+    { ticker:'TSLA', color:'#ef5350', initPx:388.88, initChg:-1.43 },
+    { ticker:'AAPL', color:'#00d4aa', initPx:null,   initChg:null  },
+];
+
+let wlPx = {}, wlChg = {};
+WL.forEach(w => { wlPx[w.ticker] = w.initPx; wlChg[w.ticker] = w.initChg; });
+
+function renderWL() {
+    document.getElementById('wlGrid').innerHTML = WL.map(w => {
+        const px   = wlPx[w.ticker];
+        const chg  = wlChg[w.ticker];
+        const eod  = getEOD(w.ticker);
+
+        const pxStr  = px  != null ? `$${px.toFixed(2)}` : '—';
+        const chgStr = chg != null ? `${chg>0?'+':''}${chg.toFixed(2)}%` : '—';
+        const cls    = chg == null ? '' : chg > 0 ? 'green' : 'red';
+
+        // Live vs EOD close delta (shows how much has moved since last confirmed close)
+        let vsHtml = '';
+        if (eod && px != null && !isMarketOpen()) {
+            // Market closed — live IS the close, no vs-close needed
+        } else if (eod && px != null) {
+            const delta = ((px - eod.close) / eod.close) * 100;
+            const dcls  = delta >= 0 ? 'green' : 'red';
+            vsHtml = `<div class="wl-vs ${dcls}">${delta>=0?'+':''}${delta.toFixed(2)}% vs close</div>`;
+        }
+
+        // EOD reference block
+        let eodHtml = '';
+        if (eod) {
+            const eChgCls = eod.chg == null ? '' : eod.chg >= 0 ? 'green' : 'red';
+            const eChgStr = eod.chg != null ? `<span class="wl-eod-chg ${eChgCls}">${eod.chg>=0?'+':''}${eod.chg.toFixed(2)}%</span>` : '';
+            eodHtml = `
+            <div class="wl-sep"></div>
+            <div class="wl-eod-row">
+                <span class="wl-eod-price">$${eod.close.toFixed(2)}</span>
+                ${eChgStr}
+                <span class="wl-eod-label">EOD</span>
+            </div>
+            <div class="wl-eod-date">${eod.date}</div>`;
+        }
+
+        return `<div class="wl-cell">
+            <div class="wl-ticker" style="color:${w.color}">${w.ticker}</div>
+            <div class="wl-price" id="wlpx-${w.ticker}">${pxStr}</div>
+            <div class="wl-chg ${cls}">${chgStr}</div>
+            ${vsHtml}
+            ${eodHtml}
+        </div>`;
+    }).join('');
+}
+
+// ══════════════════════════════════════════
+//  EOD HISTORY PANEL
+// ══════════════════════════════════════════
+function renderEOD() {
+    const el    = document.getElementById('eodPanel');
+    const subEl = document.getElementById('eodSub');
+    if (!EOD_SNAPS.length) {
+        el.innerHTML = '<div class="empty">No EOD snapshots yet — Claude writes these at 4 PM ET</div>';
+        return;
+    }
+    subEl.textContent = `${EOD_SNAPS.length} day${EOD_SNAPS.length !== 1 ? 's' : ''}`;
+
+    // Header
+    const tickers = WL.map(w => w.ticker);
+    const hdr = `<div class="eod-hist-row eod-hist-hdr">
+        <span>Date</span>
+        ${tickers.map(t => `<span style="color:${WL.find(w=>w.ticker===t)?.color||'var(--text)'}">${t}</span>`).join('')}
+    </div>`;
+
+    const rows = [...EOD_SNAPS].reverse().map(s => {
+        const cells = tickers.map(t => {
+            const px  = s.closes?.[t];
+            const chg = s.changes?.[t];
+            if (px == null) return `<span style="color:var(--dim)">—</span>`;
+            const cls = chg == null ? '' : chg >= 0 ? 'green' : 'red';
+            return `<span class="mono ${cls}">$${px.toFixed(2)}${chg != null ? `<br><span style="font-size:9.5px">${chg>=0?'+':''}${chg.toFixed(2)}%</span>` : ''}</span>`;
+        }).join('');
+        return `<div class="eod-hist-row">${'<span style="color:var(--dim);font-size:10.5px">'+s.date+'</span>'}${cells}</div>
+            ${s.note ? `<div class="eod-note">${s.note}</div>` : ''}`;
+    }).join('');
+
+    el.innerHTML = hdr + rows;
+}
+
+const PROXIES = [
+    u => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`,
+    u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
+];
+
+async function proxyFetch(url) {
+    for (const proxy of PROXIES) {
+        try {
+            const r = await fetch(proxy(url), { signal: AbortSignal.timeout(8000) });
+            if (!r.ok) continue;
+            const json = await r.json();
+            // allorigins wraps in {contents}, corsproxy returns raw
+            return typeof json.contents === 'string' ? JSON.parse(json.contents) : json;
+        } catch(e) { continue; }
+    }
+    return null;
+}
+
+async function fetchPx(ticker) {
+    const url  = `https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?interval=1m&range=1d`;
+    const data = await proxyFetch(url);
+    const meta = data?.chart?.result?.[0]?.meta;
+    if (meta?.regularMarketPrice) return { px: meta.regularMarketPrice, chg: meta.regularMarketChangePercent ?? null };
+    return null;
+}
+
+// Fetch real bid/ask mid for a specific option contract
+async function fetchOptionMid(ticker, expiry, strike, direction) {
+    const url  = `https://query1.finance.yahoo.com/v7/finance/options/${ticker}`;
+    const data = await proxyFetch(url);
+    try {
+        const chain  = data?.optionChain?.result?.[0]?.options?.[0];
+        const bucket = direction === 'put' ? chain?.puts : chain?.calls;
+        if (!bucket) return null;
+        // Find closest strike
+        const match = bucket.reduce((best, c) =>
+            Math.abs(c.strike - strike) < Math.abs((best?.strike ?? Infinity) - strike) ? c : best, null);
+        if (!match) return null;
+        const bid = match.bid ?? match.lastPrice;
+        const ask = match.ask ?? match.lastPrice;
+        return (bid + ask) / 2;
+    } catch(e) { return null; }
+}
+
+let optionMids = {}; // cache: trade.id → real mid price
+
+async function refreshOptionMids() {
+    const open = (window.TRADES || []).filter(t => t.status === 'open');
+    await Promise.all(open.map(async t => {
+        const mid = await fetchOptionMid(t.ticker, t.expiry, t.strike, t.direction);
+        if (mid !== null) optionMids[t.id] = mid;
+    }));
+}
+
+let wlBusy = false;
+async function refreshWL() {
+    if (wlBusy) return;
+    wlBusy = true;
+    const btn = document.getElementById('refreshBtn');
+    btn.textContent='⟳ …'; btn.classList.add('loading');
+    WL.forEach(w => { const el=document.getElementById('wlpx-'+w.ticker); if(el) el.innerHTML='<span class="sk"></span>'; });
+    await Promise.all(WL.map(async w => {
+        const r = await fetchPx(w.ticker);
+        if (r) { wlPx[w.ticker]=r.px; if(r.chg!=null) wlChg[w.ticker]=r.chg; }
+    }));
+    renderWL();
+    updateSPYContext();
+    document.getElementById('wlStamp').textContent = new Date().toLocaleTimeString();
+    btn.textContent='⟳ Refresh'; btn.classList.remove('loading');
+    wlBusy = false;
+    document.getElementById('lastRefresh').textContent = 'refreshed ' + new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'});
+    renderPositions(); // recalc P&L with fresh prices
+}
+
+function updateSPYContext() {
+    const px  = wlPx['SPY'];
+    const chg = wlChg['SPY'];
+    if (px) {
+        const chgStr = chg != null ? ` ${chg>0?'▲':'▼'} ${chg>0?'+':''}${chg.toFixed(2)}%` : '';
+        document.getElementById('ctx-spy').textContent = `$${px.toFixed(2)}${chgStr}`;
+        document.getElementById('ctx-spy').className = 'mono ' + (chg < 0 ? 'red' : 'green');
+    }
+}
+
+// ══════════════════════════════════════════
+//  MARKET STATUS
+// ══════════════════════════════════════════
+function isMarketOpen() {
+    const now = new Date();
+    // ET = UTC-4 (EDT)
+    const etH = (now.getUTCHours() - 4 + 24) % 24;
+    const etM = now.getUTCMinutes();
+    const mins = etH * 60 + etM;
+    const day  = now.getUTCDay(); // 0=Sun,6=Sat - adjusted for ET
+    const isWeekday = day >= 1 && day <= 5;
+    return isWeekday && mins >= 570 && mins < 960; // 9:30 AM – 4:00 PM ET
+}
+
+function minutesToClose() {
+    const now = new Date();
+    const etMs = now.getTime() - (4 * 3600000);
+    const etNow = new Date(etMs);
+    const close = new Date(etMs);
+    close.setUTCHours(20, 0, 0, 0); // 4 PM ET = 20:00 UTC
+    return Math.max(0, (close.getTime() - new Date().getTime()) / 60000);
+}
+
+// ══════════════════════════════════════════
+//  OPTIONS P&L MODEL
+// ══════════════════════════════════════════
+function optionPnl(trade) {
+    if (trade.pnlOverride !== null && trade.pnlOverride !== undefined) return trade.pnlOverride;
+
+    const currentPx = wlPx[trade.ticker] || trade.entryUnderlying;
+
+    if (trade.status === 'closed') {
+        if (trade.exitPremium === null) return null;
+        return (trade.exitPremium - trade.entryPremium) * trade.contracts * 100;
+    }
+
+    if (trade.status === 'expired') {
+        // Check if ITM at expiry
+        const finalPx = trade.exitUnderlying || currentPx;
+        const intrinsic = trade.direction === 'put'
+            ? Math.max(0, trade.strike - finalPx)
+            : Math.max(0, finalPx - trade.strike);
+        return (intrinsic - trade.entryPremium) * trade.contracts * 100;
+    }
+
+    // OPEN: guard — if expiry date is in the past, this 0DTE expired worthless
+    if (trade.expiry && trade.expiry < todayStr()) {
+        const intrinsicFinal = trade.direction === 'put'
+            ? Math.max(0, trade.strike - (trade.exitUnderlying || trade.entryUnderlying))
+            : Math.max(0, (trade.exitUnderlying || trade.entryUnderlying) - trade.strike);
+        return (intrinsicFinal - trade.entryPremium) * trade.contracts * 100;
+    }
+
+    // OPEN: use real option mid-price if we have it
+    if (optionMids[trade.id] != null) {
+        return (optionMids[trade.id] - trade.entryPremium) * trade.contracts * 100;
+    }
+
+    // OPEN: fallback — model estimate (cap timeFrac at 1)
+    const minsLeft = minutesToClose();
+    const entryMins = trade.entryMinutesRemaining || 115;
+    const timeFrac  = Math.min(1, Math.max(0, minsLeft / entryMins));
+
+    let intrinsic;
+    if (trade.direction === 'put') intrinsic = Math.max(0, trade.strike - currentPx);
+    else intrinsic = Math.max(0, currentPx - trade.strike);
+
+    const origTimeVal = trade.entryPremium; // at entry, all OTM = all time value
+    const currTimeVal = origTimeVal * Math.sqrt(timeFrac);
+
+    // Price movement delta effect
+    const pxMove = trade.direction === 'put'
+        ? (trade.entryUnderlying - currentPx)
+        : (currentPx - trade.entryUnderlying);
+    const delta = intrinsic > 0 ? 0.65 : 0.30;
+    const deltaEff = pxMove * delta;
+
+    const estPrem = Math.max(0.01, intrinsic + currTimeVal + (intrinsic === 0 ? deltaEff * 0.5 : 0));
+    return (estPrem - trade.entryPremium) * trade.contracts * 100;
+}
+
+// ══════════════════════════════════════════
+//  HELPERS
+// ══════════════════════════════════════════
+function fmt$(n) { return '$' + Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0}); }
+function fmtS(n) { return (n >= 0 ? '+' : '−') + fmt$(n); }
+function todayStr() { return new Date().toISOString().slice(0,10); }
+
+// ══════════════════════════════════════════
+//  RENDER
+// ══════════════════════════════════════════
+function renderPositions() {
+    const open   = TRADES_ALL.filter(t => t.status === 'open');
+    const closed = TRADES_ALL.filter(t => t.status === 'closed' || t.status === 'expired');
+    const today  = todayStr();
+
+    document.getElementById('openBadge').textContent = open.length + ' open';
+
+    // ── Open positions ──
+    const openEl = document.getElementById('openPositions');
+    if (!open.length) {
+        openEl.innerHTML = '<div class="empty">No open positions — Claude will enter the next setup when conditions align</div>';
+    } else {
+        openEl.innerHTML = open.map(t => {
+            const pnl    = optionPnl(t);
+            const isPos  = pnl >= 0;
+            const pnlPct = pnl != null ? (pnl / t.cost * 100) : null;
+            const currPx = wlPx[t.ticker] || t.entryUnderlying;
+            const barW   = pnlPct != null ? Math.min(100, Math.abs(pnlPct)).toFixed(0) : 0;
+
+            return `<div class="pos-card">
+                <div class="pos-top">
+                    <div class="pos-left">
+                        <div class="pos-name">
+                            <span class="pos-ticker" style="color:${t.direction==='put'?'var(--red)':'var(--green)'}">${t.ticker}</span>
+                            <span class="badge badge-${t.direction}">${t.direction==='put'?'↓ Put':'↑ Call'}</span>
+                            <span class="badge badge-open">0DTE</span>
+                            <span class="badge badge-risk">${t.risk}</span>
+                        </div>
+                        <div class="pos-detail">
+                            $${t.strike} strike · ${t.contracts} contracts · entered ${t.entryTime} ET
+                            · underlying @ $${t.entryUnderlying} → now $${currPx.toFixed(2)}
+                        </div>
+                    </div>
+                    <div class="pos-pnl">
+                        <div class="pos-pnl-val ${pnl == null ? '' : isPos ? 'green' : 'red'}">
+                            ${pnl != null ? fmtS(pnl) : '—'}
+                        </div>
+                        <div class="pos-pnl-pct ${pnl == null ? '' : isPos ? 'green' : 'red'}">
+                            ${pnlPct != null ? `${isPos?'+':''}${pnlPct.toFixed(1)}% on cost` : 'calculating…'}
+                        </div>
+                        <div class="pos-pnl-cost">Cost: ${fmt$(t.cost)}</div>
+                        <div class="pnl-track" style="width:100px">
+                            <div class="pnl-fill" style="width:${barW}%;background:${isPos?'var(--green)':'var(--red)'}"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-label">Type</div>
+                        <div class="metric-val">${t.setupType}</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-val green" style="font-size:12px">${t.target}</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Invalidation</div>
+                        <div class="metric-val red" style="font-size:12px">${t.invalidation}</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Entry Premium</div>
+                        <div class="metric-val">$${t.entryPremium.toFixed(2)}/c</div>
+                    </div>
+                </div>
+                <div class="thesis-box">
+                    <div class="thesis-label">💭 Trade Reasoning</div>
+                    <div class="thesis-text">${t.thesis}</div>
+                </div>
+            </div>`;
+        }).join('');
+    }
+
+    // ── Trade history ──
+    const histEl = document.getElementById('tradeHistory');
+    if (!closed.length) {
+        histEl.innerHTML = '<div class="empty">No closed trades yet</div>';
+        document.getElementById('histSub').textContent = '—';
+    } else {
+        const rows = [...closed].reverse().map(t => {
+            const pnl = optionPnl(t);
+            const isP = pnl >= 0;
+            const pnlPct = pnl != null ? (pnl / t.cost * 100) : 0;
+            return `<div class="hist-row">
+                <span style="font-size:10.5px"><span style="color:var(--yellow);font-family:'Space Mono',monospace;font-weight:700">${t.id}</span><br><span style="color:var(--dim)">${t.date}<br>${t.entryTime}</span></span>
+                <span><span class="mono" style="font-weight:700">${t.ticker}</span>
+                    <span class="badge badge-${t.direction}" style="margin-left:5px">${t.direction==='put'?'↓P':'↑C'}</span></span>
+                <span class="mono">$${t.strike}</span>
+                <span class="mono">${t.contracts}c · ${fmt$(t.cost)}</span>
+                <span class="mono" style="font-size:11px">${t.entryPremium.toFixed(2)}→${(t.exitPremium||0).toFixed(2)}</span>
+                <span class="mono ${isP?'green':'red'}" style="font-weight:700">${fmtS(pnl)}<br><span style="font-size:10px;opacity:.7">${isP?'+':''}${pnlPct.toFixed(0)}%</span></span>
+            </div>`;
+        }).join('');
+        histEl.innerHTML = `
+            <div class="hist-row hist-hdr">
+                <span>Date</span><span>Position</span><span>Strike</span>
+                <span>Size / Cost</span><span>Prem In→Out</span><span>P&amp;L</span>
+            </div>
+            <div class="hist-scroll">${rows}</div>`;
+        document.getElementById('histSub').textContent = `${closed.length} trade${closed.length!==1?'s':''} closed`;
+    }
+
+    // ── Account summary ──
+    const closedPnl  = closed.reduce((s,t) => s + (optionPnl(t)||0), 0);
+    const openCost   = open.reduce((s,t) => s + t.cost, 0);
+    const openPnlEst = open.reduce((s,t) => s + (optionPnl(t)||0), 0);
+    const acctVal    = CAPITAL + closedPnl + openPnlEst;
+    const totalPnl   = closedPnl + openPnlEst;
+    const todayPnl   = TRADES_ALL.filter(t=>t.date===today && (t.status==='closed'||t.status==='expired')).reduce((s,t)=>s+(optionPnl(t)||0),0);
+    const cashVal    = CAPITAL - openCost + closedPnl;
+
+    const isPos = totalPnl >= 0;
+    const isTPos = todayPnl >= 0;
+
+    document.getElementById('acctVal').textContent = fmt$(acctVal);
+    document.getElementById('acctVal').className   = 'acard-val ' + (acctVal > CAPITAL ? 'green' : 'red');
+    document.getElementById('totalPnl').textContent   = closed.length || open.length ? fmtS(totalPnl) : '—';
+    document.getElementById('totalPnl').className     = 'acard-val ' + (isPos ? 'green' : 'red');
+    document.getElementById('totalPnlPct').textContent= (closed.length || open.length) ? `${isPos?'+':''}${((totalPnl/CAPITAL)*100).toFixed(2)}% total (incl. est. open)` : 'Awaiting close';
+    document.getElementById('todayPnl').textContent   = closed.filter(t=>t.date===today).length ? fmtS(todayPnl) : (open.length ? fmtS(openPnlEst) + ' est.' : '—');
+    document.getElementById('todayPnl').className     = 'acard-val ' + (isTPos ? 'green' : 'red');
+    document.getElementById('todayPnlSub').textContent= open.length ? 'Estimated (positions open)' : closed.filter(t=>t.date===today).length ? 'Realized today' : '';
+    document.getElementById('cashVal').textContent  = fmt$(Math.max(0, cashVal));
+    document.getElementById('cashPct').textContent  = `${((Math.max(0,cashVal)/CAPITAL)*100).toFixed(1)}% of capital`;
+    document.getElementById('exposure').textContent = fmt$(openCost);
+    document.getElementById('exposurePct').textContent = `${((openCost/CAPITAL)*100).toFixed(1)}% deployed`;
+
+    // Stats
+    const wins   = closed.filter(t => (optionPnl(t)||0) > 0);
+    const losses = closed.filter(t => (optionPnl(t)||0) <= 0);
+    const pnls   = closed.map(t => optionPnl(t)||0);
+    document.getElementById('totalTrades').textContent = TRADES_ALL.length;
+    document.getElementById('winRate').textContent     = closed.length ? `${(wins.length/closed.length*100).toFixed(0)}%` : '—';
+    document.getElementById('bestTrade').textContent   = pnls.length ? fmtS(Math.max(...pnls)) : '—';
+    document.getElementById('worstTrade').textContent  = pnls.length ? fmtS(Math.min(...pnls)) : '—';
+    document.getElementById('avgWin').textContent      = wins.length  ? fmtS(wins.reduce((s,t)=>s+(optionPnl(t)||0),0)/wins.length) : '—';
+    document.getElementById('avgLoss').textContent     = losses.length? fmtS(losses.reduce((s,t)=>s+(optionPnl(t)||0),0)/losses.length) : '—';
+
+    // Daily notes
+    const notesEl = document.getElementById('dailyNotes');
+    if (!NOTES_ALL.length) {
+        notesEl.innerHTML = '<div class="empty">No notes</div>';
+    } else {
+        notesEl.innerHTML = [...NOTES_ALL].reverse().map(n =>
+            `<div class="note-item"><div class="note-date">${n.date}</div>${n.note}</div>`
+        ).join('');
+    }
+
+    // Market status
+    const mktEl = document.getElementById('mktStatus');
+    if (isMarketOpen()) {
+        mktEl.textContent = '● MARKET OPEN';
+        mktEl.className   = 'mkt-status mkt-open';
+    } else {
+        mktEl.textContent = '● MARKET CLOSED';
+        mktEl.className   = 'mkt-status mkt-closed';
+    }
+}
+
+// ══════════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════════
+async function fullRefresh() {
+    await Promise.all([refreshWL(), refreshOptionMids()]);
+    renderPositions();
+}
+
+function init() {
+    renderWL();
+    renderPositions();
+    renderEOD();
+    fullRefresh();
+    setInterval(fullRefresh, 60 * 1000);      // real data every 60s
+    setInterval(renderPositions, 15 * 1000);  // recalc display every 15s
+}
+
+init();
+</script>
+</body>
+</html>
