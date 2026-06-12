@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full YOLO — Autonomous</title>
     <script>
-    // Fetch trades.js fresh on every load — bypasses GitHub Pages CDN cache
-    window._tradesReady = fetch('trades.js?nocache=' + Date.now(), { cache: 'no-store' })
-        .then(r => r.text())
-        .then(code => { eval(code); })
-        .catch(() => { window.TRADES = []; window.PORTFOLIO = {}; window.DAILY_NOTES = []; window.EOD_SNAPSHOTS = []; });
+    // Fetch trades.js via GitHub API — bypasses CDN cache entirely, always live
+    window._tradesReady = fetch('https://api.github.com/repos/Nefariouss/portfolio-dashboard/contents/trades.js', {
+        headers: { 'Accept': 'application/vnd.github.v3+json' },
+        cache: 'no-store'
+    })
+    .then(r => r.json())
+    .then(data => { eval(atob(data.content.replace(/\n/g, ''))); })
+    .catch(() => {
+        // Fallback: try same-origin fetch
+        return fetch('trades.js?v=' + Date.now(), { cache: 'no-store' })
+            .then(r => r.text()).then(code => eval(code));
+    });
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
@@ -713,11 +720,4 @@ function renderPositions() {
 
 // ══════════════════════════════════════════
 //  INIT
-// ══════════════════════════════════════════
-async function fullRefresh() {
-    await Promise.all([refreshWL(), refreshOptionMids()]);
-    renderPositions();
-}
-
-function init() {
-   
+// ══════════�
