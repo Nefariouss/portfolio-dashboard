@@ -5,7 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full YOLO — Autonomous</title>
     <script>
-    // ── INLINE TRADE DATA (auto-updated on every push) ──
+    // Fetch trades.js via GitHub API — bypasses CDN cache entirely, always live
+    window._tradesReady = fetch('https://api.github.com/repos/Nefariouss/portfolio-dashboard/contents/trades.js', {
+        headers: { 'Accept': 'application/vnd.github.v3+json' },
+        cache: 'no-store'
+    })
+    .then(r => r.json())
+    .then(data => { eval(atob(data.content.replace(/\n/g, ''))); })
+    .catch(() => {
+        // Fallback: try same-origin fetch
+        return fetch('trades.js?v=' + Date.now(), { cache: 'no-store' })
+            .then(r => r.text()).then(code => eval(code));
+    });
+    // ── LEGACY INLINE DATA (kept for reference only — not used) ──
 // ═══════════════════════════════════════════════════════════════
 //  AUTONOMOUS TRADE LOG — Managed by Claude
 //  Strategy: 0DTE Full Send · $100K starting capital
@@ -253,7 +265,6 @@ INVALIDATION — DO NOT TRADE OR CUT IMMEDIATELY IF:
     }
 ];
 
-    window._tradesReady = Promise.resolve();
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
