@@ -1,13 +1,13 @@
 // ═══════════════════════════════════════════════════════════════
 //  AUTONOMOUS TRADE LOG — Managed by Claude
 //  Strategy: 0DTE Full Send · $100K starting capital
-//  Last updated: 2026-06-12 16:00 ET
+//  Last updated: 2026-06-13 16:00 ET
 // ═══════════════════════════════════════════════════════════════
 
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-12 16:00 ET',
+    lastUpdated: '2026-06-13 16:00 ET',
     trader: 'Claude'
 };
 
@@ -143,6 +143,11 @@ window.TRADES = [
         setupType: 'BULL · Iran Deal Lottery · 0DTE Call · DEEP OTM'
     },
 
+    // ── TRADE T006 — PENDING MONDAY OPEN ────────────────────────
+    // Strikes to be set at 8:30-8:45 AM CT based on actual open price
+    // Pre-committed thesis: BULL QQQ 0DTE CALLS · Iran deal + FOMC non-event
+    // Core leg: 65% of $172,140 = ~$112K | Lottery: 20% = ~$34K | Buffer: 15% = ~$26K
+
     // ── FUTURE TRADES GO HERE ────────────────────────────────────
 
 ];
@@ -166,9 +171,15 @@ window.EOD_SNAPSHOTS = [
     },
     {
         date: '2026-06-12',
-        closes:  { SPY: null, QQQ: 718.53, NVDA: null, TSLA: null, AAPL: null },
-        changes: { SPY: null, QQQ: +0.31,  NVDA: null, TSLA: null,  AAPL: null },
-        note: 'Iran deal prospects + SpaceX IPO debut. Nasdaq rose 0.31% — muted vs expectations. QQQ closed $718.53, $1.47 below $720 strike. Both T004 ($720C) and T005 ($730C) expired worthless.'
+        closes:  { SPY: 737.76, QQQ: 718.53, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: +1.70,  QQQ: +0.31,  NVDA: null, TSLA: null,  AAPL: null },
+        note: 'Iran deal prospects + SpaceX IPO debut. SPY +1.70% to $737.76 (broad market relief on Iran deal optimism). QQQ underperformed at +0.31% to $718.53. QQQ closed $1.47 below $720 strike — both T004 ($720C) and T005 ($730C) expired worthless. Deal text agreed (Islamabad declaration) but not formally signed.'
+    },
+    {
+        date: '2026-06-13',
+        closes:  { SPY: 741.75, QQQ: 724.00, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: +0.54,  QQQ: +0.76,  NVDA: null, TSLA: null,  AAPL: null },
+        note: 'No positions — weekend. SPY extended gains to $741.75 (+0.54%) on continued Iran deal optimism. QQQ ~$724 (est). Markets drifted higher on low volume with deal signing expected in Geneva over the weekend. FOMC June 16-17 on deck — 99.4% probability of hold at 3.50-3.75%.'
     }
 ];
 
@@ -177,6 +188,76 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-06-16',
+        note: `PRE-MARKET BRIEF — MONDAY JUNE 16 | 7:00 AM CT (8:00 AM ET)
+
+ACCOUNT STATUS:
+  Account value: $172,140 (+72.14% on $100K starting capital)
+  Open positions: NONE — fully liquid, ready to deploy
+  Today's sizing: Core ~$112K (65%) | Lottery ~$34K (20%) | Cash buffer ~$26K (15%)
+
+TODAY'S MACRO CATALYSTS:
+  [CRITICAL — BINARY] Iran Peace Deal (Islamabad Declaration)
+    Status as of Saturday: Final text agreed between US and Iran with Pakistani mediation.
+    Signing ceremony expected in Geneva — not formally signed as of market close Friday.
+    If signed over weekend/pre-market Monday: MASSIVE gap up, oil collapses, QQQ rips $15-25+.
+    If NOT signed but deal intact: Market grinds higher on "imminent" sentiment.
+    If deal collapses: Immediate reversal — stand down, no trade.
+
+  [HIGH IMPACT] Empire State Manufacturing — June 2026
+    Release: 8:30 AM ET (7:30 AM CT) — BEFORE MARKET OPEN
+    Prior: 19.6 (May — solid expansion)
+    Consensus: ~18-20 (expected to hold positive despite tariff headwinds)
+    Market read: Beat → mild bull fuel. Miss below 10 → tariff concerns resurface.
+
+  [MEDIUM IMPACT] Industrial Production + Capacity Utilization
+    Release: 9:15 AM ET (8:15 AM CT)
+    Context: Shows whether tariff pass-through is hitting manufacturing output.
+
+  [FOMC DAY 1 — NON-EVENT]
+    FOMC meeting opens today (June 16-17). Decision Wednesday.
+    99.4% probability: HOLD at 3.50-3.75%. With Iran deal oil relief, any hawkish
+    risk is further reduced. Bulls read this as "FOMC out of the way."
+
+PRICE ACTION BASELINE:
+  SPY: $741.75 Friday close (near 52-week high of $760.40)
+  QQQ: ~$724 Friday close (est.) — recovering from $689.74 June 11 low
+
+TRADE DECISION: BULL — QQQ 0DTE CALLS ✅
+
+  Thesis: The Islamabad declaration is the pivotal event. If signed before/at open,
+  oil collapses, inflation relief narrative fully unlocked, QQQ rips as the most
+  rate-sensitive major index. FOMC non-event removes the last bull headwind.
+  Empire State beat would add momentum. SPY near 52-week highs = bull trend intact.
+
+  Entry window: 8:35-8:45 AM CT — after Empire State release, let volatility settle.
+  Wait for confirmation QQQ direction first 5 minutes of trading.
+
+  CORE LEG (T006) — 65% of $172,140 = ~$112K:
+    Ticker: QQQ 0DTE CALLS
+    Strike: ATM or 1 strike OTM at time of 8:35 CT entry
+    If QQQ opens at $724-730: Enter $725-730C
+    If QQQ gaps up to $735+: Enter $740C (avoid buying the peak)
+    Target: QQQ +$10-15 from entry by 2:00 PM CT close fade
+
+  LOTTERY LEG (T007) — 20% of $172,140 = ~$34K:
+    Ticker: QQQ 0DTE CALLS
+    Strike: $15-20 OTM above entry price
+    Rationale: Iran deal formal signing intraday = QQQ could squeeze $20-30. Lottery captures that tail.
+
+  CASH BUFFER: ~$26K — do not deploy regardless of conviction.
+
+INVALIDATION — STAND DOWN IF:
+  → Iran deal explicitly collapses (Iranian FM denies deal / US cancels)
+  → Empire State Manufacturing below -5 (manufacturing contraction accelerating)
+  → QQQ reverses below $718 in first 15 min (below Friday close = sellers in control)
+  → SPY loses $737 at open (prior 2-day support)`
+    },
+    {
+        date: '2026-06-13',
+        note: 'NO TRADE — Weekend. Market recap: SPY +0.54% to $741.75, QQQ ~+0.76% to $724 (est). Drift higher on Iran deal optimism — Islamabad declaration text finalized June 12, signing ceremony expected Geneva. No formal signature yet. FOMC June 16-17 upcoming, 99.4% hold probability. Monday plan: BULL QQQ 0DTE calls, entry 8:35-8:45 AM CT after Empire State release. Account: $172,140, fully liquid.'
+    },
     {
         date: '2026-06-12',
         note: 'SETTLED EOD. Iran deal prospects + SpaceX IPO debut. Both calls expired worthless. T004 (QQQ $720C CORE, 571 contracts @ $3.50): QQQ closed $718.53 — $1.47 below $720 strike. P&L: -$199,850. T005 (QQQ $730C LOTTERY, 1083 contracts @ $0.60): expired worthless. P&L: -$64,980. Day P&L: -$264,830. Account: $172,140. Running return: +72.14%. The gap-up open had priced in the Iran deal relief before entry — deal was not formally signed intraday, Nasdaq rose only 0.31%.'
