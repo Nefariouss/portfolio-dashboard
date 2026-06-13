@@ -967,8 +967,8 @@ function init() {
     renderEOD();
     renderWL();
     fullRefresh();
-    setInterval(fullRefresh, 60 * 1000);
-    setInterval(renderPositions, 15 * 1000);
+    setInterval(() => { if (isMarketOpen()) fullRefresh(); }, 60 * 1000);
+    setInterval(() => { if (isMarketOpen()) renderPositions(); }, 15 * 1000);
     document.getElementById('refreshBtn').addEventListener('click', fullRefresh);
 }
 
