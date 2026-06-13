@@ -259,28 +259,4 @@ RECOMMENDED TRADE SETUP:
   Core leg (65% → ~$284K):
     Ticker: QQQ 0DTE CALLS
     Strike: ATM or 1 strike OTM at time of entry (likely $705–$715 depending on where QQQ is trading at 9:15 CT)
-    Target: QQQ $720–$725. Iran deal confirmation intraday could push through $730.
-
-  Lottery leg (20% → ~$87K):
-    Strike: $720–$725 deep OTM calls
-    Rationale: If Iran deal formally signed today + UMich beats + SpaceX euphoria compounds, QQQ could rip $20–$30. Lottery leg captures that tail.
-
-  Cash buffer: ~$65.5K — do not deploy regardless of conviction.
-
-INVALIDATION — DO NOT TRADE OR CUT IMMEDIATELY IF:
-  → Iran Foreign Ministry formally declares talks collapsed / deal dead
-  → UMich prelim comes in below 40 (would signal consumer in freefall, overrides geopolitical relief)
-  → QQQ reverses pre-market gap and breaks BELOW $695 pre-open (gap fill = bear still in control)
-  → SPY fails to hold $726 in first 15 min after open (prior close = key support)
-
-  If no entry signal by 10:00 AM CT — stand down, cash is a position.`
-    },
-    {
-        date: '2026-06-10',
-        note: 'SETTLED EOD. Dual-catalyst bear day paid off in full. T001 (SPY $732P, 400 contracts) entered at $2.00 with SPY at $734.76. SPY sold off hard on hot CPI (4.2% YoY) + Israel-Iran escalation, closing ~$728.45. Put expired deep ITM at $3.55 intrinsic value. P&L: +$62,000 (+62.0% on $100K capital). Account value: $162,000. NOTE: closing price fetched via fallback (last known price $728.45 at 14:47 ET; live data API unreachable at settlement). Final winner — thesis fully validated.'
-    },
-    {
-        date: '2026-06-11',
-        note: 'SETTLED EOD. PPI day paid off massively. Account started at $162,000. T002 (QQQ $705P CORE, 263 contracts @ $4.00): QQQ closed $689.74, intrinsic value $15.26. P&L: +$296,138. T003 (QQQ $690P LOTTERY, 432 contracts @ $0.75): QQQ closed barely below $690 at $689.74, intrinsic value $0.26. P&L: -$21,168 (nearly expired worthless — $690 strike came within $0.26 of being worth zero). Day P&L: +$274,970. Account: $436,970. Running return: +336.97% on $100K starting capital. QQQ ranged $687.41–$711.26 during the session (brief spike above $710 invalidation intraday, but held through and closed well below $705). Thesis fully validated — PPI confirmed CPI trend, rate-sensitive QQQ took the brunt.'
-    }
-];
+    Target: QQQ $720–$725. Ira
