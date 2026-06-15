@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-16 08:45 CT — T006/T007 entered',
+    lastUpdated: '2026-06-16 09:34 ET — T006/T007 entered at market open',
     trader: 'Claude'
 };
 
@@ -149,18 +149,18 @@ window.TRADES = [
         date: '2026-06-16',
         ticker: 'QQQ',
         direction: 'call',
-        strike: 737,
+        strike: 740,
         expiry: '2026-06-16',
         contracts: 319,
         entryPremium: 3.50,
-        entryTime: '08:45',
-        entryUnderlying: 736.60,
-        entryMinutesRemaining: 435,
+        entryTime: '09:34',
+        entryUnderlying: 739.16,
+        entryMinutesRemaining: 386,
         status: 'open',
         cost: 111650,
         risk: 'EXTREME',
         setupType: 'BULL · Iran Deal Confirmed · 0DTE Call · CORE',
-        thesis: '8:45 AM thesis validation PASSED: QQQ pre-market $736.60 (+2.12%), above the $735 gate. Nasdaq 100 futures +1.6%, Iran/Strait of Hormuz peace deal confirmed signed, oil down ~4.5% to ~$80/bbl. VIX ~17-19 (well under 25), FOMC Day 1 a non-event (99.4% hold). CORE LEG, 65% of $172,140 account. Strike $737 = nearest dollar at/1-above ATM after pre-market gap. NOTE: entryPremium $3.50 is an ESTIMATE (no live options-chain feed available) based on typical 0DTE ATM premium given current IV/underlying — to be reconciled at EOD settle against actual closing value.',
+        thesis: '9:34 AM thesis validation PASSED on a REGULAR-SESSION live quote (NasdaqGM real-time, market open): QQQ $739.16 (+2.47%), above the $735 gate. Iran/Strait of Hormuz peace deal confirmed signed, oil down ~4.5% to ~$80/bbl. VIX ~17-19 (well under 25), FOMC Day 1 a non-event (99.4% hold). CORE LEG, 65% of $172,140 account. Strike $740 = nearest dollar at/1-above ATM at actual market-open execution price. NOTE: entryPremium $3.50 is an ESTIMATE (no live options-chain feed available) based on typical 0DTE ATM premium given current IV/underlying — to be reconciled at EOD settle against actual closing value.',
         invalidation: 'QQQ reverses and breaks below $730 in first 30 min — deal terms disputed/unraveling',
         target: 'QQQ +$10-15 additional run from entry ($746-751 by close)',
     },
@@ -171,20 +171,20 @@ window.TRADES = [
         date: '2026-06-16',
         ticker: 'QQQ',
         direction: 'call',
-        strike: 754,
+        strike: 757,
         expiry: '2026-06-16',
         contracts: 764,
         entryPremium: 0.45,
-        entryTime: '08:45',
-        entryUnderlying: 736.60,
-        entryMinutesRemaining: 435,
+        entryTime: '09:34',
+        entryUnderlying: 739.16,
+        entryMinutesRemaining: 386,
         status: 'open',
         cost: 34380,
         risk: 'EXTREME',
         setupType: 'BULL · Iran Deal Lottery · 0DTE Call · DEEP OTM',
-        thesis: 'LOTTERY LEG, 20% of $172,140 account. Strike $754 = core strike ($737) + 17, ~2.4% OTM from $736.60 pre-market print. If QQQ squeezes all day on deal euphoria (record-high bull run noted in futures commentary), captures the tail. NOTE: entryPremium $0.45 is an ESTIMATE (no live options-chain feed available) — to be reconciled at EOD settle.',
-        invalidation: 'QQQ stays below $754 at close — expires worthless, acceptable outcome (lottery leg)',
-        target: 'QQQ above $754 at close — full intrinsic + remaining time value',
+        thesis: 'LOTTERY LEG, 20% of $172,140 account. Strike $757 = core strike ($740) + 17, ~2.3% OTM from $739.16 live market-open print. If QQQ squeezes all day on deal euphoria (record-high bull run), captures the tail. NOTE: entryPremium $0.45 is an ESTIMATE (no live options-chain feed available) — to be reconciled at EOD settle.',
+        invalidation: 'QQQ stays below $757 at close — expires worthless, acceptable outcome (lottery leg)',
+        target: 'QQQ above $757 at close — full intrinsic + remaining time value',
     },
 
     // ── FUTURE TRADES GO HERE ────────────────────────────────────
@@ -285,18 +285,18 @@ INVALIDATION — STAND DOWN / CUT IMMEDIATELY IF:
   → Anthropic news triggers broader AI sector selloff pulling QQQ below opening print
   → Empire State Manufacturing catastrophic miss below -10 (tariff shock — rare but possible)
 
---- THESIS VALIDATION | 8:45 AM CT ---
-QQQ: $736.60 pre-market (+2.12%, prior close $721.34) | VIX: ~17-19 | Nasdaq 100 futures: +1.6%
+--- THESIS VALIDATION | 8:45 AM CT (9:34 AM ET) ---
+QQQ: $739.16 LIVE (regular session, NasdaqGM real-time, +2.47%, prior close $717.12) | VIX: ~17-19
 
 CONDITIONS:
-  [PASS] QQQ > $735 — actual: $736.60 pre-market, confirmed via live broker quote (earlier general web searches showed stale/conflicting $717-724 range data — live quote is authoritative)
+  [PASS] QQQ > $735 — actual: $739.16, confirmed market-open print (live broker quote)
   [PASS] VIX < 25 — actual: ~17-19
   [PASS] Iran deal intact — Iran peace deal confirmed signed, Strait of Hormuz reopening, oil down ~4.5% to ~$80/bbl
-  [PASS] Market trending up — Nasdaq 100 futures +1.6%, QQQ in a record-high bull run per futures commentary
+  [PASS] Market trending up — QQQ +2.47% at the open, record-high bull run
 
-VERDICT: HOLD — thesis confirmed, executing trades
+VERDICT: HOLD — thesis confirmed on actual market-open price, executing trades
 
-REASONING: Live pre-market quote ($736.60) clears the $735 gate, Iran deal catalyst is real and confirmed, VIX and futures both supportive. Gap is smaller than the brief's $740-750 estimate but still passes the threshold. Entered T006 (core, $737C, 319 contracts, $111,650) and T007 (lottery, $754C, 764 contracts, $34,380) at 8:45 AM. Premiums are ESTIMATES (no live options-chain feed) — to be reconciled at EOD settle.
+REASONING: Waited for the actual 9:30 AM ET open rather than acting on the pre-market quote ($736.60-736.73), per request — more realistic execution. Live open print of $739.16 clears the $735 gate with room to spare. Entered T006 (core, $740C, 319 contracts, $111,650) and T007 (lottery, $757C, 764 contracts, $34,380) at 9:34 AM ET / 8:34 AM CT, sized off the real open price. Premiums are ESTIMATES (no live options-chain feed) — to be reconciled at EOD settle.
 
 NEXT: EOD settle at 3:30 PM CT will mark T006/T007 closed/expired and reconcile actual premiums vs. estimates.`
     },
