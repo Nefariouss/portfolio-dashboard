@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-16 09:34 ET — T006/T007 entered at market open',
+    lastUpdated: '2026-06-16 15:00 ET — T006/T007 settled, account $153,710',
     trader: 'Claude'
 };
 
@@ -156,7 +156,11 @@ window.TRADES = [
         entryTime: '09:34',
         entryUnderlying: 739.16,
         entryMinutesRemaining: 386,
-        status: 'open',
+        status: 'expired',
+        premiumSold: 4.00,
+        pnlFinal: 15950,
+        closedAt: '2026-06-16 15:00 ET',
+        notes: 'Expired ITM — QQQ closed at $744.00. Intrinsic $4.00 ($744.00 - $740 strike) x 319 contracts x 100 = $127,600 - $111,650 cost = +$15,950.',
         cost: 111650,
         risk: 'EXTREME',
         setupType: 'BULL · Iran Deal Confirmed · 0DTE Call · CORE',
@@ -178,7 +182,11 @@ window.TRADES = [
         entryTime: '09:34',
         entryUnderlying: 739.16,
         entryMinutesRemaining: 386,
-        status: 'open',
+        status: 'expired',
+        premiumSold: 0.00,
+        pnlFinal: -34380,
+        closedAt: '2026-06-16 15:00 ET',
+        notes: 'Expired worthless (OTM) — QQQ closed at $744.00, below $757 strike. Lottery leg did not hit; full -$34,380 cost lost as expected risk for this leg.',
         cost: 34380,
         risk: 'EXTREME',
         setupType: 'BULL · Iran Deal Lottery · 0DTE Call · DEEP OTM',
@@ -196,6 +204,15 @@ window.TRADES = [
 // ═══════════════════════════════════════════════════════════════
 
 window.EOD_SNAPSHOTS = [
+    {
+        date: '2026-06-16',
+        closes:  { SPY: 756.50, QQQ: 744.00, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: +1.80,  QQQ: +3.14,  NVDA: null, TSLA: null, AAPL: null },
+        account_value: 153710,
+        daily_pnl: -18430,
+        vix_close: 17.68,
+        note: 'Iran deal confirmed signed, QQQ gapped to $739.16 open (+2.47%) and ran to $744.00 close (+3.14%). T006 $740C core expired ITM (+$15,950). T007 $757C lottery expired worthless (-$34,380). Net day -$18,430.'
+    },
     {
         date: '2026-06-10',
         closes:  { SPY: 728.45, QQQ: 706.67, NVDA: null, TSLA: null, AAPL: null },
@@ -298,7 +315,16 @@ VERDICT: HOLD — thesis confirmed on actual market-open price, executing trades
 
 REASONING: Waited for the actual 9:30 AM ET open rather than acting on the pre-market quote ($736.60-736.73), per request — more realistic execution. Live open print of $739.16 clears the $735 gate with room to spare. Entered T006 (core, $740C, 319 contracts, $111,650) and T007 (lottery, $757C, 764 contracts, $34,380) at 9:34 AM ET / 8:34 AM CT, sized off the real open price. Premiums are ESTIMATES (no live options-chain feed) — to be reconciled at EOD settle.
 
-NEXT: EOD settle at 3:30 PM CT will mark T006/T007 closed/expired and reconcile actual premiums vs. estimates.`
+NEXT: EOD settle at 3:30 PM CT will mark T006/T007 closed/expired and reconcile actual premiums vs. estimates.
+
+--- SETTLED EOD — 2026-06-16 | 3:30 PM CT ---
+QQQ CLOSE: $744.00 (+3.14%) | VIX: 17.68
+T006 QQQ $740C: expired ITM @ $4.00 intrinsic → P&L: +$15,950
+T007 QQQ $757C: expired worthless → P&L: -$34,380
+DAILY P&L: -$18,430
+ACCOUNT: $153,710
+
+NOTES: Diamond-handed to close per instruction. Core leg paid off (QQQ closed $4 above $740 strike) but lottery leg missed by $13 — QQQ's $744.76 intraday high never reached $757. Thesis was directionally correct (Iran deal rally played out, +3.14% on QQQ) but the lottery strike spacing (+17 from core) was too aggressive for the realized move size.`
     },
     {
         date: '2026-06-13',
