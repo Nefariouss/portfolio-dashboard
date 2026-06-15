@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-13 16:00 ET',
+    lastUpdated: '2026-06-16 08:45 CT',
     trader: 'Claude'
 };
 
@@ -245,7 +245,27 @@ TRADE DECISION: FULL BULL SEND — QQQ 0DTE CALLS 🎯
 INVALIDATION — STAND DOWN / CUT IMMEDIATELY IF:
   → QQQ reverses gap and breaks below $735 in first 30 min (deal terms disputed/unraveling)
   → Anthropic news triggers broader AI sector selloff pulling QQQ below opening print
-  → Empire State Manufacturing catastrophic miss below -10 (tariff shock — rare but possible)`
+  → Empire State Manufacturing catastrophic miss below -10 (tariff shock — rare but possible)
+
+--- THESIS VALIDATION | 8:45 AM CT ---
+QQQ: ~$717-724 (range seen: $711.28-$724.01) | VIX: ~17-19 | SPY: data inconclusive
+
+CONDITIONS:
+  [FAIL] QQQ > $735 — actual: ~$717-724, BELOW Friday's $724 close. No bull gap materialized as expected; live search data is noisy/possibly stale but every read is under the $735 threshold.
+  [PASS] VIX < 25 — actual: ~17-19
+  [PASS] Iran deal intact — Iran peace deal confirmed signed, Strait of Hormuz reopening, oil down ~4.5% to ~$80/bbl. Catalyst is real and positive.
+  [FAIL/UNCERTAIN] Market trending up — S&P futures were reported +0.5% pre-market, but no confirmed green open print for QQQ above the bull threshold; Empire State Manufacturing data pulled was inconsistent with the brief's prior-month figure (likely stale/wrong-year data), so that input is unreliable.
+
+VERDICT: STAND DOWN
+
+REASONING: The Iran deal catalyst is confirmed and genuinely bullish, but the hard entry gate — QQQ > $735 — is not confirmed and the best available live price reads put QQQ BELOW Friday's close, not gapping up $15-25 as the brief expected. Live data quality this morning is too inconsistent (conflicting Empire State figures, no clean QQQ open print) to size a $112K core position with confidence. Per the checklist, any failed/unconfirmed condition means STAND DOWN — do not enter T006/T007 as sized.
+
+PIVOT SUGGESTIONS (for human review in Claude Code):
+  1. Re-check QQQ live quote directly (broker/Level 1 feed) before committing — if QQQ is genuinely confirmed >$735 and trending up, the original BULL plan (core $742-748C, lottery $760-765C) can still be executed manually with fresh numbers.
+  2. If QQQ is flat/down despite the Iran deal (deal already priced in over the weekend, "sell the news"), consider a SMALLER core-only bull position (skip lottery leg) closer to current spot, rather than the full $146K deployment.
+  3. If QQQ is clearly red and breaking down, the bull thesis is busted — stand aside entirely today rather than flipping to bearish, since the Iran catalyst is fundamentally positive and a bear flip would contradict the macro driver. Wait for tomorrow's re-assessment.
+
+NEXT: Open Claude Code (cd C:\Projects\portfolio && claude) to execute or realign once live QQQ price is confirmed.`
     },
     {
         date: '2026-06-13',
