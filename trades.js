@@ -149,57 +149,6 @@ window.TRADES = [
     // Core leg: 65% of $172,140 = ~$112K | Lottery: 20% = ~$34K | Buffer: 15% = ~$26K
 
 
-    // ─── TRADE T006 ──────────────────────────────────────────────────────────
-    {
-        id: 'T006',
-        date: '2026-06-16',
-        ticker: 'QQQ',
-        direction: 'call',
-        strike: 745,
-        expiry: '2026-06-16',
-        contracts: 248,
-        entryPremium: 4.50,
-        entryTime: '08:45',
-        entryUnderlying: 744.0,
-        entryMinutesRemaining: 375,
-        exitPremium: null,
-        exitTime: null,
-        exitUnderlying: null,
-        status: 'open',
-        pnlOverride: null,
-        thesis: 'Iran peace deal formally confirmed June 15 by both US & Iran. Strait of Hormuz reopening. Oil collapsing to ~$83. Asian markets +3%. US futures climbed. QQQ gapped from $724 Friday close. FOMC non-event (99.4% hold). CORE LEG.',
-        invalidation: 'QQQ breaks below $735 in first 30 min',
-        target: 'QQQ continuation into close. $10-15 run from entry.',
-        cost: 111600,
-        risk: 'HIGH',
-        setupType: 'BULL - Iran Catalyst - 0DTE Call - CORE'
-    },
-
-    // ─── TRADE T007 ──────────────────────────────────────────────────────────
-    {
-        id: 'T007',
-        date: '2026-06-16',
-        ticker: 'QQQ',
-        direction: 'call',
-        strike: 762,
-        expiry: '2026-06-16',
-        contracts: 523,
-        entryPremium: 0.65,
-        entryTime: '08:45',
-        entryUnderlying: 744.0,
-        entryMinutesRemaining: 375,
-        exitPremium: null,
-        exitTime: null,
-        exitUnderlying: null,
-        status: 'open',
-        pnlOverride: null,
-        thesis: 'LOTTERY LEG. Deep OTM 0DTE call. Captures full-day squeeze euphoria on Iran deal. Low cost, massive payout if QQQ runs $18+.',
-        invalidation: 'QQQ fails to hold gap above $735',
-        target: 'QQQ $762+ at close. Full intrinsic value payout.',
-        cost: 33995,
-        risk: 'EXTREME',
-        setupType: 'BULL - Iran Catalyst - 0DTE Call - LOTTERY'
-    },
     // ── FUTURE TRADES GO HERE ────────────────────────────────────
 
 ];
@@ -242,7 +191,61 @@ window.EOD_SNAPSHOTS = [
 window.DAILY_NOTES = [
     {
         date: '2026-06-16',
-        note: `EXECUTED at 8:45 AM CT. Thesis validated — Iran peace deal confirmed by both US & Iran on June 15 (Sunday). Strait of Hormuz reopening announced. Oil fell to ~$83/bbl. Asian markets surged 3%+. US futures climbed (Bloomberg Markets Wrap). VIX ~16 (well below 25). QQQ estimated gap to $744.00 from $724 Friday close (+2.8%). FOMC June 16-17 non-event. T006: QQQ $745C, 248 contracts @ $4.50. Cost: $111,600. T007: QQQ $762C, 523 contracts @ $0.65. Cost: $33,995. Total deployed: $145,595. Cash buffer: $26,545. Waiting for 3:00 PM CT close.`
+        note: `PRE-MARKET BRIEF — MONDAY JUNE 16 | 7:00 AM CT (8:00 AM ET)
+
+ACCOUNT STATUS:
+  Account value: $172,140 (after T004/T005 loss on June 12 — $199,850 + $64,980 expired worthless)
+  Core budget (65%): ~$112K | Lottery budget (20%): ~$34K | Buffer (15%): ~$26K (never touch)
+
+WEEKEND CATALYSTS:
+[MAJOR BULL] Iran Peace Deal Formally Signed — Strait of Hormuz Reopening
+  US and Iran confirmed a deal on June 15 (Sunday). Strait of Hormuz reopening.
+  Oil sanctions lifted. This is the full catalyst, not just 'close' — deal is done.
+  Oil collapsing pre-market. Inflation relief narrative fully unlocked.
+  QQQ gap up expected: $15-25+ from Friday $724 close. Target open: $740-750+.
+
+[MINOR HEADWIND] Anthropic Fable 5 + Mythos 5 Shut Down by US Government
+  Export control directive June 12 — government forced Anthropic offline (jailbreak
+  concern). Anthropic is private (no direct stock), but it raises AI regulation anxiety.
+  NVDA and AI-heavy QQQ names may see mild selling pressure. Does NOT override Iran
+  catalyst — this is noise relative to the macro move.
+
+TODAY'S SCHEDULED CATALYSTS:
+  [HIGH IMPACT] Empire State Manufacturing — June 2026
+    Release: 7:30 AM CT (8:30 AM ET) — BEFORE MARKET OPEN
+    Prior: 19.6 (May — solid expansion). Beat = adds to bull fuel. Miss = ignored given Iran.
+
+  [FOMC DAY 1 — NON-EVENT]
+    FOMC opens today (June 16-17), decision Wednesday. 99.4% hold probability.
+    With oil dropping on Iran deal, hawkish risk gone. Bull tailwind.
+
+TRADE DECISION: FULL BULL SEND — QQQ 0DTE CALLS 🎯
+
+  Thesis: Deal is signed. Strait is open. Oil collapses = inflation relief = Fed cut
+  narrative returns = QQQ rips as the most rate-sensitive major index. This is the
+  payoff trade. June 12 we got burned because the deal wasn't signed — today it is.
+  FOMC non-event. Anthropic news is noise.
+
+  Entry window: 8:45-9:00 AM CT — DO NOT buy the opening spike. Let gap breathe,
+  wait for initial volatility to settle, then enter on first stable print.
+
+  CORE LEG (T006) — 65% of $172,140 = ~$112K:
+    Ticker: QQQ 0DTE CALLS
+    Strike: ATM or 1 strike OTM after gap settles (expected QQQ $740-750 range at open)
+    Likely strike: $742-748C depending on where QQQ stabilizes
+    Target: QQQ +$10-15 additional run from entry
+
+  LOTTERY LEG (T007) — 20% of $172,140 = ~$34K:
+    Ticker: QQQ 0DTE CALLS
+    Strike: $15-20 OTM above core entry (Likely $760-765C)
+    Rationale: If QQQ squeezes all day on deal euphoria, lottery captures $20-30 tail.
+
+  CASH BUFFER: ~$26K — do not deploy under any circumstances.
+
+INVALIDATION — STAND DOWN / CUT IMMEDIATELY IF:
+  → QQQ reverses gap and breaks below $735 in first 30 min (deal terms disputed/unraveling)
+  → Anthropic news triggers broader AI sector selloff pulling QQQ below opening print
+  → Empire State Manufacturing catastrophic miss below -10 (tariff shock — rare but possible)`
     },
     {
         date: '2026-06-13',
