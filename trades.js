@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-16 15:00 ET — T006/T007 settled, account $153,710',
+    lastUpdated: '2026-06-17 08:45 CT — FOMC day thesis validation: STAND DOWN',
     trader: 'Claude'
 };
 
@@ -246,6 +246,72 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-06-17',
+        note: `PRE-MARKET BRIEF — TUESDAY JUNE 17 | 8:45 AM CT (9:45 AM ET)
+FOMC DECISION DAY — Kevin Warsh's first rate decision (~1–2 PM CT)
+
+ACCOUNT STATUS:
+  Account value: $153,710 (T006/T007 settled June 16: net -$18,430)
+  Core budget (65%): ~$99,912 | Lottery budget (20%): ~$30,742 | Buffer (15%): ~$23,057
+
+THIS MORNING'S CONTEXT:
+[RISK-OFF] Pre-FOMC Caution — S&P slightly lower at open
+  Markets treading carefully ahead of Warsh's debut press conference. Rate hold
+  is 97.4–98.5% certain (CME FedWatch), but the dot plot and tone are the real
+  wildcard — Fed futures market is now trending toward a rate hike rather than
+  a cut, reflecting CPI at 4.2% (highest since April 2023).
+
+[PATTERN RISK] Tech declined after 7 of 8 FOMC meetings in 2026
+  Persistent "sell the news" behavior in QQQ/Nasdaq around FOMC events this year.
+  Even benign hold outcomes have triggered tech selloffs intraday.
+
+[DATA] May 2026 Retail Sales — released 8:30 AM ET
+  Fresh spending data in traders' hands heading into the Fed statement.
+
+[BULL BACKDROP] Iran Deal Intact — 60-day Strait of Hormuz agreement confirmed
+  Oil below $80/bbl. Original geopolitical tailwind still in place but catalyst
+  is 24+ hours old and fully priced after QQQ's +3.14% gap on June 16.
+
+--- THESIS VALIDATION | 8:45 AM CT ---
+QQQ: ~$738–740 est. (opened ~$738.10, -0.8% from $744.00 close) | VIX: ~18–20 est. | SPY: slightly red
+
+CONDITIONS:
+  [PASS] QQQ > $735 — actual: ~$738–740 est., clears the gate
+  [PASS] VIX < 25 — actual: ~18–20 est., well within threshold
+  [PASS] Iran deal intact — 60-day Hormuz deal confirmed, catalyst structurally intact
+  [FAIL] Market direction (S&P green) — SPY/S&P slightly red at open, cautious pre-FOMC tone
+  [FAIL] 15-min price action (QQQ trending up) — QQQ opened -0.8% below prior close, sideways/soft
+  [FAIL] FOMC binary risk (special June 17 condition) — Warsh decision lands 1–2 PM CT into an open
+         0DTE position; tech declined after 7 of 8 FOMC meetings in 2026; Fed futures leaning
+         hawkish; dot plot could signal rate-hike path
+
+VERDICT: STAND DOWN
+
+REASONING: Two core checklist gates fail (S&P direction + 15-min momentum), and the special
+FOMC-day risk trigger independently disqualifies aggressive 0DTE call exposure today. The Iran
+catalyst that drove Monday's +3.14% rally is now fully priced into QQQ at $744. Today's market
+tone is not geopolitical relief — it is FOMC uncertainty. Even at 50% core sizing with no lottery
+leg (the pre-authorized FOMC adjustment), deploying ~$50K in 0DTE calls with a binary 1 PM event
+that has historically sent tech lower 7 of 8 times is negative expected value. Capital preservation
+is the correct call.
+
+PIVOT SUGGESTIONS (human to choose direction):
+  1. SKIP ENTIRELY TODAY — Wait for post-FOMC clarity. Trade Thursday/Friday with a clean
+     directional setup and no Fed binary hanging over the session. Preserve $153,710.
+
+  2. POST-FOMC OPPORTUNISTIC (afternoon only) — Watch the 1–2 PM CT Warsh presser live. If
+     verdict is benign hold + neutral/dovish tone AND QQQ rips above $745 on the statement,
+     enter a small 0DTE call position (~20% of budget, ~$30K max) in the final 90 minutes only.
+     The binary is resolved; you are trading confirmed direction. High-risk but informed.
+
+  3. FADE THE FOMC — Buy QQQ puts or a bear call spread to trade the persistent "sell the news"
+     pattern. With tech declining 7 of 8 post-FOMC in 2026, short exposure through close has the
+     statistical edge today. Consider QQQ $740P or $738P for a play on continuation of morning
+     weakness into the decision.
+
+NEXT: Human reviews this report and selects from pivot options (or sets a custom direction).`
+    },
     {
         date: '2026-06-16',
         note: `PRE-MARKET BRIEF — MONDAY JUNE 16 | 7:00 AM CT (8:00 AM ET)
