@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-18 08:45 CT — Morning validation: STAND DOWN; QQQ $735 gate failed (opened $735.00, sold to $724.53); account $104,010',
+    lastUpdated: '2026-06-18 15:30 CT — EOD settle: no positions (STAND DOWN day); QQQ closed $739.66 (+2.37%), VIX 16.40; account $104,010',
     trader: 'Claude'
 };
 
@@ -234,6 +234,15 @@ window.TRADES = [
 
 window.EOD_SNAPSHOTS = [
     {
+        date: '2026-06-18',
+        closes:  { SPY: 746.74, QQQ: 739.66, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: +0.78,  QQQ: +2.37,  NVDA: null, TSLA: null, AAPL: null },
+        account_value: 104010,
+        daily_pnl: 0,
+        vix_close: 16.40,
+        note: 'STAND DOWN — no positions. QQQ staged massive intraday reversal: opened $735.00, sold to session low $724.53 on FOMC hangover (STAND DOWN called 8:45 AM CT), then ripped to close $739.66 (+2.37%). VIX collapsed from 18.38 to 16.40 as FOMC fears faded. AI/tech momentum + Iran deal continuation drove afternoon buying. Capital preserved at $104,010.'
+    },
+    {
         date: '2026-06-17',
         closes:  { SPY: 747.36, QQQ: 733.41, NVDA: null, TSLA: null, AAPL: null },
         changes: { SPY: -1.21,  QQQ: -1.34,  NVDA: null, TSLA: null, AAPL: null },
@@ -318,7 +327,19 @@ PIVOT SUGGESTIONS:
   2. BEAR PIVOT (QQQ PUTS) — If QQQ breaks below $725 support and VIX pushes above 20, the FOMC hawkish multiple-compression thesis creates a bear setup. Enter QQQ $724P or $722P (ATM or 1-strike OTM at time of entry). Thesis: dot-plot repricing of tech valuations continues into weekly options expiry, QQQ retests Jun 17 lows near $730 or lower.
   3. FULL STAND DOWN — Iran deal catalyst largely priced in from Monday's +3.14% QQQ session. No fresh high-conviction catalyst today that wasn't already known last night. Sit on $104,010 cash entirely, wait for Friday or next week when FOMC shock has been fully absorbed and a clean setup forms.
 
-NEXT: Human reviews in Claude Code to choose direction.`
+NEXT: Human reviews in Claude Code to choose direction.
+
+--- SETTLED EOD — 2026-06-18 | 3:30 PM CT ---
+NO POSITIONS TODAY — STAND DOWN
+QQQ CLOSE: $739.66 (+2.37%) | SPY: $746.74 (+0.78%) | VIX: 16.40 (−11.1% from 18.38)
+ACCOUNT: $104,010 (unchanged — no P&L)
+
+NOTES: STAND DOWN was correct at 8:45 AM CT — QQQ immediately rejected the $735 open and flushed to
+$724.53 session low in the first 15 min. However, markets staged a massive afternoon reversal driven
+by AI/tech momentum and continued Iran deal tailwinds, with QQQ closing at $739.66. VIX collapsed
+back to 16.40 as FOMC-hawk fears faded intraday. Pivot suggestion #1 (wait for sustained $735 reclaim
+on 30-min candle by 10:30 AM CT) would have caught the afternoon rip — worth watching Friday for a
+similar setup. Capital preserved. Clean setup heading into Friday with FOMC overhang largely absorbed.`
     },
     {
         date: '2026-06-17',
