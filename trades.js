@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-17 09:45 ET — FOMC-adjusted HOLD; T008 QQQ $739C ×142 executed',
+    lastUpdated: '2026-06-18 08:45 CT — Morning validation: STAND DOWN; QQQ $735 gate failed (opened $735.00, sold to $724.53); account $104,010',
     trader: 'Claude'
 };
 
@@ -210,7 +210,12 @@ window.TRADES = [
         entryTime: '09:45',
         entryUnderlying: 738.10,
         entryMinutesRemaining: 375,
-        status: 'open',
+        status: 'expired',
+        exitUnderlying: 733.41,
+        premiumSold: 0.00,
+        pnlFinal: -49700,
+        closedAt: '2026-06-17 16:00 ET',
+        notes: 'Expired worthless (OTM) — QQQ closed ~$733.41, well below $739 strike. FOMC hawkish dot plot triggered invalidation: 9/18 FOMC members projected rate hike in 2026 (6 projecting multiple hikes). Nasdaq fell 1.34%, tech bellwethers led losses into close. Full -$49,700 cost lost. 50% FOMC size adjustment capped downside vs. normal full core position (~$99,912).',
         cost: 49700,
         risk: 'HIGH',
         setupType: 'BULL · FOMC-Adjusted Core · 0DTE Call · CORE',
@@ -228,6 +233,15 @@ window.TRADES = [
 // ═══════════════════════════════════════════════════════════════
 
 window.EOD_SNAPSHOTS = [
+    {
+        date: '2026-06-17',
+        closes:  { SPY: 747.36, QQQ: 733.41, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: -1.21,  QQQ: -1.34,  NVDA: null, TSLA: null, AAPL: null },
+        account_value: 104010,
+        daily_pnl: -49700,
+        vix_close: 18.38,
+        note: 'FOMC Day 2 — Warsh held rates at 3.50–3.75% (12-0 vote) but hawkish dot plot (9/18 members projecting rate hike, 6 projecting multiple hikes) triggered T008 invalidation. Nasdaq -1.34%, S&P 500 -1.21%. Tech bellwethers (MSFT, META, GOOGL, AMZN) led losses; stocks sold off into close hitting day lows in final minutes. 10yr Treasury yield +6.9bps to 4.497%. VIX +12% to 18.38. T008 QQQ $739C expired worthless (-$49,700). Account: $104,010.'
+    },
     {
         date: '2026-06-16',
         closes:  { SPY: 756.50, QQQ: 744.00, NVDA: null, TSLA: null, AAPL: null },
@@ -268,6 +282,44 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-06-18',
+        note: `PRE-MARKET BRIEF — THURSDAY JUNE 18 | 8:45 AM CT
+
+ACCOUNT STATUS:
+  Account value: $104,010 (post-T008 FOMC loss: -$49,700 on Jun 17)
+  Core budget (65%): ~$67,607 | Lottery (20%): ~$20,802 | Buffer (15%): $15,602 (never touch)
+
+CATALYSTS:
+  [BULL] Iran MOU formally signed — Trump + Pezeshkian signed at Palace of Versailles (Jun 17 evening)
+    Strait of Hormuz reopening confirmed; US sanctions to be lifted; WTI $75.83 -1.25%, Brent $78.41 -1.4%
+  [BULL] Intel/Apple chip deal — Trump announced AAPL will design/build chips with INTC stateside
+    INTC leading chip stocks higher; positive tech-specific bid
+  [BEAR] FOMC hangover — Warsh hawkish dot plot (9/18 members project rate hike in 2026) still weighing on tech
+    QQQ -1.34% yesterday; 10yr yield +6.9bps to 4.497% on Jun 17
+  [BEAR] VIX elevated — closed 18.38 on Jun 17 after 12% FOMC spike; uncertainty not yet resolved
+
+--- THESIS VALIDATION | 8:45 AM CT ---
+QQQ: ~$727 (range today: $724.53–$735.68, opened $735.00) | VIX: ~18.4 | SPY: ~$742–$743
+
+CONDITIONS:
+  [FAIL] QQQ > $735 — opened $735.00, immediately sold off to session low $724.53; current ~$727
+  [PASS] VIX < 25 — ~18.4 (elevated post-FOMC but well under gate)
+  [PASS] Iran deal intact — MOU signed at Versailles; Strait reopening underway; WTI $75.83/bbl confirmed
+  [FAIL] Market trending up — QQQ 15-min momentum negative; sold off $8+ from open inside first 15 min
+  [FAIL] 15-min price action — QQQ rejected hard at $735 gate on open; FOMC aftermath dominating price action
+
+VERDICT: STAND DOWN
+
+REASONING: QQQ opened at exactly the $735 gate threshold and was immediately rejected, selling to a session low of $724.53 within the first 15 minutes — a clear gate failure, not a borderline pass. The FOMC hawkish dot plot (9/18 members projecting rate hikes) remains fresh and is actively suppressing tech/QQQ despite positive macro backdrop. Iran MOU is fully intact and Intel/Apple chip deal is a genuine positive for tech, but neither overcomes the QQQ gate failure and strongly negative 15-min momentum. Account at $104,010 (thin margin after FOMC loss) makes capital preservation the right call over forcing a marginal setup.
+
+PIVOT SUGGESTIONS:
+  1. WAIT & WATCH — Set alert for QQQ sustained hold above $735 on a 30-min candle by 10:00–10:30 AM CT. If reclaimed with VIX retreating below 17, reassess for a scaled-back core-only entry (~50% of normal budget, ~$33,800). No lottery leg until FOMC overhang clears. Requires clean upward momentum at reassessment time — not just a touch of $735.
+  2. BEAR PIVOT (QQQ PUTS) — If QQQ breaks below $725 support and VIX pushes above 20, the FOMC hawkish multiple-compression thesis creates a bear setup. Enter QQQ $724P or $722P (ATM or 1-strike OTM at time of entry). Thesis: dot-plot repricing of tech valuations continues into weekly options expiry, QQQ retests Jun 17 lows near $730 or lower.
+  3. FULL STAND DOWN — Iran deal catalyst largely priced in from Monday's +3.14% QQQ session. No fresh high-conviction catalyst today that wasn't already known last night. Sit on $104,010 cash entirely, wait for Friday or next week when FOMC shock has been fully absorbed and a clean setup forms.
+
+NEXT: Human reviews in Claude Code to choose direction.`
+    },
     {
         date: '2026-06-17',
         note: `PRE-MARKET BRIEF — TUESDAY JUNE 17 | 9:45 AM ET (8:45 AM CT) [LIVE REVISION]
