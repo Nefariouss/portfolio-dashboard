@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-19 08:45 CT — Juneteenth holiday, market closed. No positions. Account $104,010. Iran deal intact but Swiss nuclear talks postponed (Lebanon). Monday: watch QQQ > $735 gate, Lebanon/Iran situation.',
+    lastUpdated: '2026-06-19 15:30 CT — Juneteenth holiday, market closed. No positions, no P&L. Account $104,010. Iran deal intact. Monday: watch QQQ > $735 gate, Lebanon/Iran situation.',
     trader: 'Claude'
 };
 
@@ -234,6 +234,15 @@ window.TRADES = [
 
 window.EOD_SNAPSHOTS = [
     {
+        date: '2026-06-19',
+        closes:  { SPY: null, QQQ: null, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: null, QQQ: null, NVDA: null, TSLA: null, AAPL: null },
+        account_value: 104010,
+        daily_pnl: 0,
+        vix_close: null,
+        note: 'JUNETEENTH HOLIDAY — U.S. equity markets closed. No positions, no P&L. Account unchanged at $104,010. Last market close (Jun 18): QQQ $739.66, SPY $746.74, VIX 16.40.'
+    },
+    {
         date: '2026-06-18',
         closes:  { SPY: 746.74, QQQ: 739.66, NVDA: null, TSLA: null, AAPL: null },
         changes: { SPY: +0.78,  QQQ: +2.37,  NVDA: null, TSLA: null, AAPL: null },
@@ -322,7 +331,14 @@ MONDAY JUNE 22 OUTLOOK:
   Bear case: Lebanon escalation disrupts Iran peace framework; Swiss talks collapse = oil spike
     risk = inflation narrative returns = QQQ multiple compression
   Gate: QQQ > $735 (last close $739.66 — sitting cleanly above gate)
-  VIX: 16.40 at Jun 18 close — well under 25 gate; watch for Lebanon-related weekend spike`
+  VIX: 16.40 at Jun 18 close — well under 25 gate; watch for Lebanon-related weekend spike
+
+--- SETTLED EOD — 2026-06-19 | 3:30 PM CT ---
+MARKET CLOSED — JUNETEENTH FEDERAL HOLIDAY
+NO POSITIONS — NO P&L
+ACCOUNT: $104,010 (unchanged)
+
+No open trades to settle. Markets closed all session. Next trading day: Monday June 22.`
     },
     {
         date: '2026-06-18',
