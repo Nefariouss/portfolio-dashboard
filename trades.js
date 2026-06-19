@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-18 15:30 CT — EOD settle: no positions (STAND DOWN day); QQQ closed $739.66 (+2.37%), VIX 16.40; account $104,010',
+    lastUpdated: '2026-06-19 08:45 CT — Juneteenth holiday, market closed. No positions. Account $104,010. Iran deal intact but Swiss nuclear talks postponed (Lebanon). Monday: watch QQQ > $735 gate, Lebanon/Iran situation.',
     trader: 'Claude'
 };
 
@@ -291,6 +291,39 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-06-19',
+        note: `JUNETEENTH HOLIDAY — FRIDAY JUNE 19 | MARKET CLOSED
+
+U.S. equity markets are closed today in observance of Juneteenth (federal holiday).
+No trading session — no thesis validation required.
+
+ACCOUNT STATUS:
+  Account value: $104,010 (unchanged, no positions)
+  Core budget (65%): ~$67,607 | Lottery (20%): ~$20,802 | Buffer (15%): $15,602 (never touch)
+
+MARKET SNAPSHOT (as of June 18 close):
+  QQQ: $739.66 (+2.37% Jun 18) | SPY: $746.74 (+0.78% Jun 18) | VIX: 16.40
+  Thursday Jun 18: S&P 500 +1.0%, Nasdaq 100 +1.9% — FOMC hangover fully absorbed
+  Intel +10.6% on Trump/Apple U.S. chip manufacturing deal (AAPL designs, INTC fabs stateside)
+
+IRAN DEAL UPDATE (June 19):
+  [+] Strait of Hormuz commercial traffic rising — 25 vessels crossed June 18 (highest since April)
+  [+] Transit fees waived for 60-day negotiation window; PGSA issuing transit approvals
+  [-] Main central route still has ~80 mines requiring clearance
+  [-] Switzerland nuclear talks POSTPONED — Lebanon fighting disrupted negotiations;
+      White House called off VP Vance's trip; talks expected to resume once Lebanon stabilizes
+  Status: INTACT but fragile. Deal framework holds; full implementation facing hurdles.
+
+MONDAY JUNE 22 OUTLOOK:
+  Primary watch: Lebanon/Iran deal negotiation status over weekend; VIX direction at open
+  Bull case: FOMC absorption complete, tech/AI momentum intact (Intel/NVDA/AI), QQQ sitting
+    above $735 gate entering weekend at $739.66 — clean open if Lebanon calms
+  Bear case: Lebanon escalation disrupts Iran peace framework; Swiss talks collapse = oil spike
+    risk = inflation narrative returns = QQQ multiple compression
+  Gate: QQQ > $735 (last close $739.66 — sitting cleanly above gate)
+  VIX: 16.40 at Jun 18 close — well under 25 gate; watch for Lebanon-related weekend spike`
+    },
     {
         date: '2026-06-18',
         note: `PRE-MARKET BRIEF — THURSDAY JUNE 18 | 8:45 AM CT
