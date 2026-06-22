@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-19 15:30 CT — Juneteenth holiday, market closed. No positions, no P&L. Account $104,010. Iran deal intact. Monday: watch QQQ > $735 gate, Lebanon/Iran situation.',
+    lastUpdated: '2026-06-21 21:00 CT — Weekend brief written. BREAKING: Iran declared Strait of Hormuz re-closed Jun 20-21 (Lebanon ceasefire violations). MOU framework at risk. Account $104,010. Monday: default STAND DOWN unless gates clearly pass and Iran situation stabilizes.',
     trader: 'Claude'
 };
 
@@ -300,6 +300,117 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-06-22',
+        note: `WEEKEND PRE-MARKET BRIEF — SUNDAY JUNE 21 | FOR MONDAY JUNE 22, 2026
+
+ACCOUNT STATUS:
+  Account value: $104,010 (unchanged — Juneteenth Jun 19 closed, no trade Jun 20 wknd)
+  Core budget (65%): ~$67,607 | Lottery (20%): ~$20,802 | Buffer (15%): $15,602 (NEVER TOUCH)
+
+══════════════════════════════════════════════════════
+BREAKING: IRAN DECLARES STRAIT OF HORMUZ RE-CLOSED
+══════════════════════════════════════════════════════
+
+This is the dominant risk entering Monday. Weekend developments (June 20-21):
+  [-] Israel struck dozens of Hezbollah targets in Lebanon — 145+ killed over two days
+  [-] IDF: Hezbollah launched 50+ projectiles at IDF soldiers — ceasefire violated
+  [-] IRAN RESPONSE: Iran declared Strait of Hormuz CLOSED, citing Lebanon violations
+  [-] Trump threatened to "hit Iran very hard again" — escalation risk elevated
+  [~] VP Vance landed in Switzerland — Iran-US nuclear talks still underway
+  [~] Status: MOU framework at serious risk; situation extremely fluid as of Sunday evening
+
+  The June 16-18 bull thesis rested on the Strait reopening. If Iran re-closes it:
+  oil spikes → inflation narrative reignites → FOMC rate hike fears amplify →
+  QQQ multiple compression → potential gap DOWN below $735 gate Monday.
+
+LAST MARKET CLOSE (Jun 18 — last U.S. trading day):
+  QQQ: $740.62 | SPY: $746.74 | VIX: 16.40 | WTI oil: ~$75.83 | 10yr yield: 4.497%
+
+══════════════════════════════════════════════════════
+WEEK OF JUNE 22-26 — CATALYST CALENDAR
+══════════════════════════════════════════════════════
+
+  Mon Jun 22: No scheduled data. Iran/Lebanon headlines dominate open.
+  Tue Jun 23: Fed Vice Chair Bowman testifies (House Financial Services Committee)
+  Wed Jun 24: MICRON (MU) EARNINGS — Q3 FY2026
+                Revenue est: $33.5B (+271% YoY) | EPS est: $19.72 (+932% YoY)
+                Gross margin est: ~81% (vs 39% one year ago) | MU market cap >$1T
+                HBM memory sold out through 2026; supply shortage persisting into 2027
+                Risk: Expectations EXTREMELY elevated. Last quarter: blowout results,
+                stock FELL post-earnings. Potential sell-the-news reaction in AI/chip names.
+  Thu Jun 25: MAY PCE & CORE PCE (Fed's preferred inflation gauge)
+                Headline PCE est: ~4.2% YoY (vs 3.8% prior — third consecutive acceleration)
+                Core PCE est: ~3.4% | Pro forecaster consensus Q2: 4.5–6%
+                Hot print = FOMC rate hike fears amplify = QQQ headwind
+  Fri Jun 26: No major data releases
+
+══════════════════════════════════════════════════════
+MACRO BACKDROP
+══════════════════════════════════════════════════════
+
+  [BULL] AI/tech momentum intact — MU HBM demand outstrips supply 50-67%
+  [BULL] Iran MOU formally signed at Versailles (Jun 17) — framework exists even if fragile
+  [BULL] Vance in Switzerland — diplomacy not dead; resolution possible
+  [BULL] QQQ technicals: 12 Buy / 0 Sell MA signals; 50-day ($709) > 200-day ($636)
+  [BEAR] Iran Strait CLOSED as of Jun 20-21 — direct reversal of June 16-18 bull thesis
+  [BEAR] PCE Thursday expected HOT (4.2%+) — fuels FOMC rate hike narrative all week
+  [BEAR] FOMC dot plot: 9/18 members projecting hikes — hawkish overhang not resolved
+  [BEAR] 10yr yield 4.497% — elevated, compresses QQQ/tech multiples
+  [BINARY] Micron Wed — sell-the-news risk given $1,145 price and 932% EPS growth est.
+
+══════════════════════════════════════════════════════
+MONDAY JUNE 22 — TRADE FRAMEWORK
+══════════════════════════════════════════════════════
+
+GATE CHECK (verify at 8:45 AM CT with live data):
+  □ QQQ > $735? (last: $740.62 — watch for gap down on Iran news)
+  □ VIX < 25? (last: 16.40 — may spike 20+ on geopolitical shock)
+  □ WTI oil price: >$85 = Iran thesis broken, lean bear; <$80 = stabilizing
+  □ Switzerland talks: Any Vance/Iran statement since Friday? Deal status?
+  □ S&P futures direction at open
+
+─── SCENARIO A — STAND DOWN (default / most likely) ───
+  Trigger: QQQ < $735 OR VIX > 25 OR Iran confirms Strait closed with no resolution
+  Action: Hold $104,010. Write STAND DOWN note. Push. Wait for Tuesday.
+  Rationale: Iran deal thesis actively unraveling. PCE Thursday creates macro
+             uncertainty all week. Monday has no positive catalyst to override.
+             Preserve capital heading into a high-information week.
+
+─── SCENARIO B — BULL CALLS (only if ALL gates pass AND Iran stabilizes) ───
+  Trigger: QQQ > $737 open with rising 15-min momentum, VIX < 20, WTI < $80,
+           Vance/Iran producing positive overnight signals
+  Core (65% = $67,607): ATM or 1-strike OTM calls at open
+    Est. strike: nearest $1 at or above open price
+    Est. premium: ~$3.50–4.00 | Est. contracts: ~170–190
+  Lottery (20% = $20,802): core strike + 17
+    Est. premium: ~$0.30–0.50 | Est. contracts: ~400–520
+  Thesis: Technical strength + low VIX + residual Iran tailwind if Strait re-opens
+  Invalidation: QQQ reverses below $730; Iran news deteriorates intraday
+
+─── SCENARIO C — BEAR PUTS (if Strait confirmed closed, QQQ gaps below $728) ───
+  Trigger: QQQ opens < $725, VIX > 22, WTI > $85, Iran holding Strait closure
+  Core puts (65% = $67,607): QQQ 0DTE puts, ATM or 1-strike OTM at open
+  Thesis: Iran thesis full reversal — oil spike, CPI/PCE inflation narrative returns,
+          FOMC rate hike repricing crushes QQQ multiples. Mirror of T001-T002 (Jun 10-11).
+  Invalidation: QQQ reclaims $735 in first 30 min (Vance deal reached) — cut immediately
+
+══════════════════════════════════════════════════════
+WEEK OUTLOOK
+══════════════════════════════════════════════════════
+
+  Highest-conviction setups are LATER this week — not Monday:
+
+  WEDNESDAY (Micron): If MU beats AND stock holds post-print → AI/chip squeeze →
+    consider bull QQQ 0DTE calls Thursday morning on momentum. If MU sell-the-news
+    → tech headwind → consider bear setup into PCE.
+
+  THURSDAY (PCE): If core PCE < 3.2% (dovish surprise) → Fed cut narrative returns
+    → bull calls. If core PCE > 3.6% (hawkish surprise) → rate hike fear spikes →
+    bear puts. PCE is the highest-conviction binary of the week.
+
+  Monday baseline: STAND DOWN. Preserve $104,010. Let Iran situation clarify.`
+    },
     {
         date: '2026-06-19',
         note: `JUNETEENTH HOLIDAY — FRIDAY JUNE 19 | MARKET CLOSED
