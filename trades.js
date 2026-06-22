@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-22 09:48 ET — T009 ($744C ×225) + T010 ($761C ×520) open; morning validation logged, Iran risk monitored',
+    lastUpdated: '2026-06-22 16:00 ET — T009/T010 expired worthless (-$88,300); account $15,710',
     trader: 'Claude'
 };
 
@@ -237,7 +237,12 @@ window.TRADES = [
         entryTime: '09:48',
         entryUnderlying: 743.22,
         entryMinutesRemaining: 372,
-        status: 'open',
+        status: 'expired',
+        exitUnderlying: 735.40,
+        premiumSold: 0.00,
+        pnlFinal: -67500,
+        closedAt: '2026-06-22 16:00 ET',
+        notes: 'Expired worthless (OTM) — QQQ closed $735.40, $8.60 below $744 strike. Tech mega-cap selloff on AI capex fears: Alphabet -7%, Amazon -4.8%, Meta -2.3%, SpaceX -10.7%. QQQ opened $743.22, briefly hit $744.37 intraday high (T009 momentarily $0.37 ITM), then faded hard on Iran Strait re-closure claims and accelerating tech selling. Session low $721.97. Full -$67,500 cost lost.',
         cost: 67500,
         risk: 'EXTREME',
         setupType: 'BULL · Post-FOMC Bounce + Iran MOU · 0DTE Call · CORE',
@@ -259,7 +264,12 @@ window.TRADES = [
         entryTime: '09:48',
         entryUnderlying: 743.22,
         entryMinutesRemaining: 372,
-        status: 'open',
+        status: 'expired',
+        exitUnderlying: 735.40,
+        premiumSold: 0.00,
+        pnlFinal: -20800,
+        closedAt: '2026-06-22 16:00 ET',
+        notes: 'Expired worthless (OTM) — QQQ closed $735.40, $25.60 below $761 strike. Lottery tail never approached. Full -$20,800 cost lost.',
         cost: 20800,
         risk: 'EXTREME',
         setupType: 'BULL · Post-FOMC Bounce + Iran MOU · 0DTE Call · LOTTERY',
@@ -277,6 +287,15 @@ window.TRADES = [
 // ═══════════════════════════════════════════════════════════════
 
 window.EOD_SNAPSHOTS = [
+    {
+        date: '2026-06-22',
+        closes:  { SPY: 744.97, QQQ: 735.40, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: -0.37,  QQQ: -0.60,  NVDA: null, TSLA: null, AAPL: null },
+        account_value: 15710,
+        daily_pnl: -88300,
+        vix_close: 17.46,
+        note: 'ALPHABET-LED TECH SELLOFF — AI capex fears + Iran Strait re-closure claim. QQQ opened $743.22, hit intraday high $744.37 (T009 momentarily $0.37 ITM), then faded to session low $721.97 before closing $735.40. Alphabet -7%, Amazon -4.8%, SpaceX -10.7%, Meta -2.3%. Nasdaq-100 quarterly rebalance (CoreWeave, Nebius, Astera Labs, Rocket Lab, Teradyne added) muted index loss to -0.25% but QQQ price fell -0.60% including ex-dividend ($0.8135). T009 ($744C core) and T010 ($761C lottery) both expired worthless. Daily P&L: -$88,300. Account: $15,710. Russell 2000 closed at 3,000 for the first time ever (small caps outperformed).'
+    },
     {
         date: '2026-06-19',
         closes:  { SPY: null, QQQ: null, NVDA: null, TSLA: null, AAPL: null },
@@ -486,7 +505,22 @@ INTRADAY UPDATE (8:45 AM CT / 9:45 AM ET):
 
 OPEN POSITIONS: T009 OTM by $4.17 | T010 OTM by $21.17. Iran headline risk is primary intraday
 threat. SPY outperformance suggests broad market resilience even as QQQ fades on geopolitical noise.
-EOD settle at 3:30 PM CT will close T009/T010 and record final P&L.`
+EOD settle at 3:30 PM CT will close T009/T010 and record final P&L.
+
+--- SETTLED EOD — 2026-06-22 | 3:30 PM CT ---
+QQQ CLOSE: $735.40 (-0.60%) | SPY: $744.97 (-0.37%) | VIX: 17.46 (+4.05%)
+T009 QQQ $744C: expired worthless (OTM by $8.60) → P&L: -$67,500
+T010 QQQ $761C: expired worthless (OTM by $25.60) → P&L: -$20,800
+DAILY P&L: -$88,300
+ACCOUNT: $15,710
+
+NOTES: Near-total wipeout. QQQ briefly pierced $744 strike at intraday high ($744.37), putting T009
+$0.37 ITM for a moment, then collapsed on Alphabet -7%, Amazon -4.8%, SpaceX -10.7% AI capex selloff.
+Iran Strait re-closure claim added geopolitical pressure. QQQ hit session low $721.97 before partial
+recovery to $735.40 close. Both positions expired worthless. Account reduced to $15,710 — effectively
+exhausted to buffer level. Nasdaq-100 quarterly rebalance (CoreWeave/Nebius added) cushioned index
+loss to -0.25% but QQQ price fell -0.60% including ex-dividend ($0.8135/share). Russell 2000 hit
+3,000 for first time ever as capital rotated from mega-cap tech into small caps.`
     },
     {
         date: '2026-06-19',
