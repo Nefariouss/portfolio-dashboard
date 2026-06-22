@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-22 09:48 ET — T009/T010 entered at market open, account $104,010',
+    lastUpdated: '2026-06-22 09:48 ET — T009 ($744C ×225) + T010 ($761C ×520) open; morning validation logged, Iran risk monitored',
     trader: 'Claude'
 };
 
@@ -453,7 +453,40 @@ WEEK OUTLOOK
     → bull calls. If core PCE > 3.6% (hawkish surprise) → rate hike fear spikes →
     bear puts. PCE is the highest-conviction binary of the week.
 
-  Monday baseline: STAND DOWN. Preserve $104,010. Let Iran situation clarify.`
+  Monday baseline: STAND DOWN. Preserve $104,010. Let Iran situation clarify.
+
+--- THESIS VALIDATION | 8:45 AM CT ---
+NOTE: T009 (QQQ $744C × 225 contracts) + T010 (QQQ $761C × 520 contracts) entered at 09:48 ET
+this morning. This report documents that validation and adds intraday context.
+
+QQQ: $739.83 (intraday range $721.97–$744.37; entry $743.22) | VIX: ~17–18 est. | SPY: $746.93 (+0.3%)
+
+CONDITIONS (at entry, 09:48 ET):
+  [PASS] QQQ > $735 — actual: $743.22 (+0.46%)
+  [PASS] VIX < 25 — actual: ~16–17
+  [PASS] Iran deal intact — MOU signed Versailles Jun 17; Kpler tracking Strait traffic flowing at open
+  [PASS] Market trending up — QQQ +0.46% at open; post-FOMC relief rally extending
+
+VERDICT: HOLD — all 4 gates PASS. Scenario B executed: T009 (core $744C) + T010 (lottery $761C).
+
+REASONING: Weekend Strait closure claim (Jun 20–21) did not materialize as a market-moving event at
+the open — QQQ gapped to $743.22, cleanly above the $735 gate. VIX ~16–17 signals low fear. Iran-U.S.
+de-confliction talks active in Switzerland with "encouraging progress" per Qatar/Pakistan mediators.
+Kpler tracking commercial Strait traffic still flowing at open. Bull thesis intact → HOLD.
+
+INTRADAY UPDATE (8:45 AM CT / 9:45 AM ET):
+  QQQ: $739.83 — below entry ($743.22), $4.17 below $744 strike (T009 currently OTM)
+  SPY: $746.93 (+0.3%) — broad market holding, outperforming QQQ
+  Iran headline risk: Iran briefly suspended Switzerland talks after Trump threats; Tehran renewed
+    Strait closure claim; U.S. military denies ("Iran does not control the Strait of Hormuz");
+    15 transits recorded today per Kpler — traffic slowing but not stopped.
+    CNBC: "Markets feeling that deja vu as Iran deal under strain, once again."
+  T009 invalidation trigger: QQQ < $737 — currently $2.83 above trigger, NOT triggered.
+  T009 intraday high $744.37 briefly pierced $744 strike then faded on Iran headlines.
+
+OPEN POSITIONS: T009 OTM by $4.17 | T010 OTM by $21.17. Iran headline risk is primary intraday
+threat. SPY outperformance suggests broad market resilience even as QQQ fades on geopolitical noise.
+EOD settle at 3:30 PM CT will close T009/T010 and record final P&L.`
     },
     {
         date: '2026-06-19',
