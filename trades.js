@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-21 21:00 CT — Weekend brief written. BREAKING: Iran declared Strait of Hormuz re-closed Jun 20-21 (Lebanon ceasefire violations). MOU framework at risk. Account $104,010. Monday: default STAND DOWN unless gates clearly pass and Iran situation stabilizes.',
+    lastUpdated: '2026-06-22 09:48 ET — T009/T010 entered at market open, account $104,010',
     trader: 'Claude'
 };
 
@@ -222,6 +222,50 @@ window.TRADES = [
         thesis: 'FOMC-DAY REDUCED CORE (50% of normal $99,912 = $49,956). Live thesis validation at 9:45 AM ET: all four standard gates PASS on real session data. QQQ opened $738.10 (> $735 gate ✓), VIX 16.41 (< 25 ✓), Iran 60-day Hormuz deal confirmed intact ✓, S&P/Nasdaq futures +0.2% green ✓. Retail Sales May beat (+0.9% vs +0.5% est.) adds bullish demand signal. FOMC adjustments applied per pre-authorization: core halved to $49,956, lottery leg skipped, hawkish dot-plot added as explicit invalidation trigger. Warsh expected to hold at 3.50-3.75% but 3+ voting members may project rate hikes on dot plot — Warsh withholding his own dot (no forward guidance policy). NOTE: entryPremium $3.50 is an ESTIMATE (no live options-chain feed) — to be reconciled at EOD settle.',
         invalidation: 'QQQ breaks below $730; Warsh press conference yields hawkish dot plot (3+ hike projections) or rate-hike language (2-3 PM ET / 1-2 PM CT); QQQ fails to hold $735 into FOMC window',
         target: 'QQQ $745-750 by close if Warsh delivers neutral hold tone; post-presser direction determines final payout',
+    },
+
+    // ── TRADE T009 ───────────────────────────────────────────────
+    {
+        id: 'T009',
+        date: '2026-06-22',
+        ticker: 'QQQ',
+        direction: 'call',
+        strike: 744,
+        expiry: '2026-06-22',
+        contracts: 225,
+        entryPremium: 3.00,
+        entryTime: '09:48',
+        entryUnderlying: 743.22,
+        entryMinutesRemaining: 372,
+        status: 'open',
+        cost: 67500,
+        risk: 'EXTREME',
+        setupType: 'BULL · Post-FOMC Bounce + Iran MOU · 0DTE Call · CORE',
+        thesis: 'Thesis validation PASSED on live NasdaqGM quote Jun 22 9:48 AM EDT: QQQ $743.22 (+0.46%), well above $735 gate. All 4 conditions PASS. Post-FOMC relief rally underway (QQQ +2.37% Thu Jun 18), Iran MOU formally signed in France, VIX fading (~16-17), Nasdaq momentum strong. QQQ within $5.43 of 52-week high $748.65 — natural resistance level to monitor. CORE LEG, 65% of $104,010 account. Strike $744 = nearest dollar 1-above $743.22 open. NOTE: entryPremium $3.00 is an ESTIMATE (no live options-chain feed) — to be reconciled at EOD settle.',
+        invalidation: 'QQQ reverses below $737 — FOMC hangover resumes or 52-wk high resistance triggers reversal',
+        target: 'QQQ clears $748.65 (52-week high) and sets new ATH by close',
+    },
+
+    // ── TRADE T010 ───────────────────────────────────────────────
+    {
+        id: 'T010',
+        date: '2026-06-22',
+        ticker: 'QQQ',
+        direction: 'call',
+        strike: 761,
+        expiry: '2026-06-22',
+        contracts: 520,
+        entryPremium: 0.40,
+        entryTime: '09:48',
+        entryUnderlying: 743.22,
+        entryMinutesRemaining: 372,
+        status: 'open',
+        cost: 20800,
+        risk: 'EXTREME',
+        setupType: 'BULL · Post-FOMC Bounce + Iran MOU · 0DTE Call · LOTTERY',
+        thesis: 'LOTTERY LEG, 20% of $104,010 account. Strike $761 = core strike ($744) + 17, ~2.4% OTM from $743.22 entry. If QQQ breaks above 52-wk high ($748.65) and squeezes on new ATH momentum + Iran deal euphoria, captures the tail. NOTE: entryPremium $0.40 is an ESTIMATE — to be reconciled at EOD settle.',
+        invalidation: 'QQQ stays below $761 at close — expires worthless, acceptable lottery outcome',
+        target: 'QQQ above $761 at close — full intrinsic + remaining time value',
     },
 
     // ── FUTURE TRADES GO HERE ────────────────────────────────────
