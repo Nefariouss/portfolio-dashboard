@@ -596,7 +596,7 @@ TRADE EXECUTED:
 TARGET: QQQ $745–750 by close if Warsh delivers neutral hold tone
 INVALIDATION: QQQ < $730; hawkish dot plot / rate-hike language from Warsh (2–3 PM ET)
 
-NEXT: EOD settle at 3:30 PM CT will mark T008 closed/expired and reconcile premium estimate.\`
+NEXT: EOD settle at 3:30 PM CT will mark T008 closed/expired and reconcile premium estimate.`
     },
     {
         date: '2026-06-16',
