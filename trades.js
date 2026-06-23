@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-22 16:00 ET — T009/T010 expired worthless (-$88,300); account $15,710',
+    lastUpdated: '2026-06-23 16:00 ET — no positions; account $15,710 unchanged',
     trader: 'Claude'
 };
 
@@ -288,6 +288,15 @@ window.TRADES = [
 
 window.EOD_SNAPSHOTS = [
     {
+        date: '2026-06-23',
+        closes:  { SPY: 744.39, QQQ: 736.17, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: -0.08,  QQQ: +0.10,  NVDA: null, TSLA: null, AAPL: null },
+        account_value: 15710,
+        daily_pnl: 0,
+        vix_close: 17.80,
+        note: 'NO POSITIONS — account at buffer level. QQQ volatile intraday ($734.39–$745.43) on SpaceX debt-offering shock (SpaceX -16.4%), VIX spiked to 19.50 intraday before settling back. Market closed mixed: tech/discretionary led losses intraday, QQQ recovered to $736.17 (+0.10% from Jun 22 close). No actionable 0DTE setup — account too thin for meaningful sizing and VIX elevated.'
+    },
+    {
         date: '2026-06-22',
         closes:  { SPY: 744.97, QQQ: 735.40, NVDA: null, TSLA: null, AAPL: null },
         changes: { SPY: -0.37,  QQQ: -0.60,  NVDA: null, TSLA: null, AAPL: null },
@@ -363,6 +372,36 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-06-23',
+        note: `EOD SETTLEMENT — MONDAY JUNE 23 | 3:30 PM CT
+
+NO POSITIONS TODAY — NO MORNING BRIEF ON FILE
+Account at effective buffer level ($15,710). No open trades to settle.
+
+QQQ: $736.17 (+0.10%) | range $734.39–$745.43
+SPY: $744.39 (-0.08%)
+VIX: 19.50 intraday spike / ~17.80 est. close (up from 17.46 Jun 22)
+DAILY P&L: $0
+ACCOUNT: $15,710 (unchanged)
+
+KEY MARKET EVENTS:
+  SpaceX -16.4% — company launched first-ever debt offering, raising concerns about
+    future financing needs; triggered tech/growth sector selloff intraday
+  Market closed mixed: tech and consumer discretionary led intraday losses;
+    QQQ recovered from session low $734.39 to close near flat at $736.17
+  VIX spiked intraday to 19.50 on geopolitical uncertainty + SpaceX shock before easing
+  S&P 500 / Dow held up better than Nasdaq; sector rotation into defensives
+
+ACCOUNT STATUS:
+  Account: $15,710 | Core (65%): $10,212 | Lottery (20%): $3,142 | Buffer (15%): $2,357
+  Account is effectively exhausted — meaningful 0DTE sizing not practical at this level.
+  No positions entered. Capital preserved.
+
+NEXT: Watch Wed Jun 25 MAY PCE print (est. headline 4.2% YoY, core ~3.4%) for
+directional setup. A dovish PCE surprise is the highest-conviction remaining catalyst
+to consider a final scaled-back position. VIX must be below 20 at open.`
+    },
     {
         date: '2026-06-22',
         note: `WEEKEND PRE-MARKET BRIEF — SUNDAY JUNE 21 | FOR MONDAY JUNE 22, 2026
