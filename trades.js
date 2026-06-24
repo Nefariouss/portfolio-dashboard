@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-24 08:45 CT — STAND DOWN; account $15,710 unchanged',
+    lastUpdated: '2026-06-24 15:30 CT — EOD settle; no positions; account $15,710 unchanged',
     trader: 'Claude'
 };
 
@@ -288,6 +288,15 @@ window.TRADES = [
 
 window.EOD_SNAPSHOTS = [
     {
+        date: '2026-06-24',
+        closes:  { SPY: 733.24, QQQ: 710.60, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: -0.05,  QQQ: -0.43,  NVDA: null, TSLA: null, AAPL: null },
+        account_value: 15710,
+        daily_pnl: 0,
+        vix_close: 19.80,
+        note: 'NO POSITIONS — STAND DOWN day. QQQ fell to $710.60 (-0.43%) continuing Jun 23 chip rout (QQQ was $713.65 on Jun 23, -3.29%). SPY held flat at $733.24 (-0.05%). Market stabilized ahead of MICRON Q3 earnings after close. AFTER HOURS: MU reported MASSIVE BEAT — EPS $25.11 vs $20.39 est, Revenue $41.5B vs $35.1B est, GM 84.9% vs 81.83% est, Q4 guide $49-51B vs $43.2B est. MU +6%+ AH, SMH +3% AH, DRAM ETF +10% AH. Creates significant setup for Thu Jun 25 — chip squeeze on MU blowout but PCE data (hot expected) is the binary offset.'
+    },
+    {
         date: '2026-06-23',
         closes:  { SPY: 744.39, QQQ: 736.17, NVDA: null, TSLA: null, AAPL: null },
         changes: { SPY: -0.08,  QQQ: +0.10,  NVDA: null, TSLA: null, AAPL: null },
@@ -424,7 +433,32 @@ PIVOT SUGGESTIONS:
   2. BEAR PUT SETUP (MU SELL-THE-NEWS SCENARIO) — If Micron beats tonight but sells off (typical after-hours / gap-down pattern at extreme valuations), QQQ chip components gap down Thursday. If QQQ opens < $710 on MU selloff + hot PCE, enter ATM 0DTE puts (bear gate: QQQ < $720, VIX > 20). Mirror of T001-T002 Jun 10-11 thesis. $10,212 max core size — directional leverage still meaningful even at thin capital.
   3. FULL STAND DOWN THROUGH WEEK-END — Account at $15,710 is not meaningfully deployable for the YOLO 0DTE strategy (20-25 contracts at risk vs. historical positions of 140-570 contracts). Both remaining week catalysts (MU tonight, PCE Thursday) carry heavy downside risk for QQQ. Preserve $15,710 intact. Reassess strategy viability at end of week once PCE and MU reaction are known.
 
-NEXT: Human reviews in Claude Code to choose direction.`
+NEXT: Human reviews in Claude Code to choose direction.
+
+--- SETTLED EOD — 2026-06-24 | 3:30 PM CT ---
+NO POSITIONS TODAY — STAND DOWN CONFIRMED CORRECT
+QQQ CLOSE: $710.60 (-0.43%) | SPY: $733.24 (-0.05%) | VIX: ~19.80
+DAILY P&L: $0
+ACCOUNT: $15,710 (unchanged)
+
+STAND DOWN was the right call: QQQ failed the $735 gate at 8:45 AM CT by ~$17 and continued weak,
+closing at $710.60 — its lowest close since the Jun 23 chip rout. The Micron pre-earnings
+distribution played out exactly as warned, dragging QQQ another $3 lower during regular hours.
+
+MICRON Q3 EARNINGS (AFTER HOURS — MASSIVE BEAT):
+  EPS: $25.11 vs $20.39 est (+23% above expectations)
+  Revenue: $41.5B vs $35.1B est (HBM demand acceleration)
+  Gross Margin: 84.9% vs 81.83% est
+  Q4 Guidance: $49-51B vs $43.2B est — blowout forward outlook
+  MU stock: +6%+ after hours | SMH ETF: +3% AH | DRAM ETF: +10% AH
+
+THURSDAY SETUP — BINARY:
+  QQQ has two opposing catalysts Thursday June 25:
+  [BULL] MU blowout beat → chip/semi/AI squeeze → QQQ gap up likely
+  [BEAR] May PCE data (7:30 AM CT) — est: headline +0.5% MoM / 4.1% YoY,
+         core +0.3% MoM / 3.4% YoY — HOT print fuels rate hike narrative
+  Gate check at 8:45 AM CT Thu: need QQQ > $735 AND PCE not catastrophically hot
+  At $15,710 capital: 20-25 core contracts max; no lottery leg`
     },
     {
         date: '2026-06-23',
