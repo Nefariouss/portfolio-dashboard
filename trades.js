@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-23 16:00 ET — no positions; account $15,710 unchanged',
+    lastUpdated: '2026-06-24 08:45 CT — STAND DOWN; account $15,710 unchanged',
     trader: 'Claude'
 };
 
@@ -372,6 +372,60 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-06-24',
+        note: `PRE-MARKET BRIEF — WEDNESDAY JUNE 24 | 8:45 AM CT
+
+ACCOUNT STATUS:
+  Account value: $15,710 (unchanged — no positions Jun 23)
+  Core budget (65%): $10,212 | Lottery (20%): $3,142 | Buffer (15%): $2,357 (NEVER TOUCH)
+  NOTE: Account is at effective buffer level. Meaningful 0DTE sizing not practical.
+
+CATALYST CALENDAR TODAY / TOMORROW:
+  Today (Jun 24):
+    • MICRON (MU) Q3 FY2026 EARNINGS — after market close (~4 PM ET)
+      Rev est: $34.66B ($33.5B guided) | EPS est: $19.95 ($19.15 guided) | GM ~81%
+      Shares +244% YTD; $1T market cap; HBM demand sold out through 2026
+      KEY RISK: Sell-the-news — elevated expectations, heavy QQQ weight
+      Chip stocks plunging early in session on pre-earnings anxiety
+    • May New Home Sales
+    • Fed bank stress test results
+  Tomorrow (Jun 25):
+    • MAY PCE & CORE PCE (Fed's preferred inflation gauge) — 7:30 AM CT
+      Wells Fargo est: headline +0.5% MoM / 4.1% YoY | Core: +0.3% MoM / 3.4% YoY
+      HOT print expected — FOMC rate hike narrative amplifier
+      Fed policymakers already revised 2026 PCE forecast to 3.6% headline / 3.3% core
+
+MACRO BACKDROP:
+  [BULL] Iran MOU intact — Strait of Hormuz flowing (~24 vessels/24hrs per Al Jazeera tracker)
+  [BULL] Alphabet joins Dow Jones before next Monday — minor tech sentiment positive
+  [BEAR] Chip stocks plunging intraday pre-MU earnings
+  [BEAR] PCE tomorrow consensus HOT — rate hike fears remain live (9/18 FOMC dots)
+  [BEAR] QQQ -2.5% from yesterday's close, tech/growth leading losses
+  [BEAR] 10yr yield elevated; FOMC hawkish dot-plot overhang unresolved
+  [BINARY] Micron after-close — sell-the-news risk extreme after 244% YTD run
+
+--- THESIS VALIDATION | 8:45 AM CT ---
+QQQ: $718.09 (range $712.11–$737.40) | VIX: ~17.5 | SPY: $734.98 (-1.3% from Jun 23 close)
+
+CONDITIONS:
+  [FAIL] QQQ > $735 — actual: $718.09 (−$17.91 below gate; chip selloff pre-MU earnings)
+  [PASS] VIX < 25 — actual: ~17.5 (elevated vs yesterday but under gate)
+  [PASS] Iran deal intact — MOU signed Jun 17; Strait flowing ~24 vessels/24hrs; talks ongoing
+  [FAIL] Market trending up — SPY $734.98 (−1.3% from $744.39); QQQ −2.5%; chips plunging
+  [FAIL] 15-min price action — QQQ at $718 after fading from $737 intraday high; momentum negative
+
+VERDICT: STAND DOWN
+
+REASONING: QQQ fails the $735 gate by nearly $18 — chip stocks are in broad pre-earnings distribution ahead of tonight's Micron report, pulling the entire QQQ tech complex lower. The market is pricing in elevated sell-the-news risk on MU (+244% YTD, $1T cap) and the near-certain HOT PCE print tomorrow. Iran deal is intact but is no longer a fresh catalyst — it was priced in over the June 16–22 window. No incremental bullish catalyst exists today to justify a call entry into this weakness. Account at $15,710 is also functionally exhausted for meaningful sizing regardless.
+
+PIVOT SUGGESTIONS:
+  1. THURSDAY PCE REACTION SETUP — If May PCE prints cooler than consensus (≤3.8% headline / ≤3.1% core), Fed rate hike narrative softens meaningfully, potentially triggering a QQQ relief rally into Friday. Gate check at 8:45 AM CT Thu: QQQ > $735 + VIX < 20 required. Core-only play (no lottery at this capital level); 20-25 contracts max at $15,710. Only actionable if MU does NOT crater tonight.
+  2. BEAR PUT SETUP (MU SELL-THE-NEWS SCENARIO) — If Micron beats tonight but sells off (typical after-hours / gap-down pattern at extreme valuations), QQQ chip components gap down Thursday. If QQQ opens < $710 on MU selloff + hot PCE, enter ATM 0DTE puts (bear gate: QQQ < $720, VIX > 20). Mirror of T001-T002 Jun 10-11 thesis. $10,212 max core size — directional leverage still meaningful even at thin capital.
+  3. FULL STAND DOWN THROUGH WEEK-END — Account at $15,710 is not meaningfully deployable for the YOLO 0DTE strategy (20-25 contracts at risk vs. historical positions of 140-570 contracts). Both remaining week catalysts (MU tonight, PCE Thursday) carry heavy downside risk for QQQ. Preserve $15,710 intact. Reassess strategy viability at end of week once PCE and MU reaction are known.
+
+NEXT: Human reviews in Claude Code to choose direction.`
+    },
     {
         date: '2026-06-23',
         note: `EOD SETTLEMENT — MONDAY JUNE 23 | 3:30 PM CT
