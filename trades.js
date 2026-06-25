@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-24 15:30 CT — EOD settle; no positions; account $15,710 unchanged',
+    lastUpdated: '2026-06-25 08:45 CT — morning thesis validation; STAND DOWN; hot PCE; account $15,710 unchanged',
     trader: 'Claude'
 };
 
@@ -381,6 +381,55 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-06-25',
+        note: `PRE-MARKET BRIEF — THURSDAY JUNE 25 | 8:45 AM CT
+
+ACCOUNT STATUS:
+  Account value: $15,710 (unchanged — no positions Jun 24, STAND DOWN)
+  Core budget (65%): $10,212 | Lottery (20%): $3,142 | Buffer (15%): $2,357 (NEVER TOUCH)
+  NOTE: Account is at effective buffer level. Meaningful 0DTE sizing not practical.
+
+CATALYST CALENDAR TODAY:
+  • MAY PCE & CORE PCE — RELEASED 7:30 AM CT (Fed's preferred inflation gauge):
+      Headline PCE: +4.1% YoY / +0.4% MoM — HOT (highest YoY since April 2023)
+      Core PCE:     +3.4% YoY (above 3.3% forecast)
+      Personal income: +0.7% MoM (well above +0.4% forecast)
+      → Rate hike narrative AMPLIFIED. 9/18 FOMC members already project hikes in 2026.
+  • MICRON (MU) Q3 EARNINGS BLOWOUT (after close Jun 24 — per EOD note):
+      EPS $25.11 vs $20.39 est (+23%) | Rev $41.5B vs $35.1B est
+      Q4 guide: $49–51B vs $43.2B est | MU +19% today | SMH/chip sector surging
+      → Counterweight to PCE: chips strong, but rate-sensitive tech capped by hot inflation
+
+MACRO BACKDROP:
+  [BULL] MU blowout — chip/semi/AI sector surging; HBM demand story intact
+  [BULL] Iran MOU intact — Strait traffic near pre-war levels (~20M bbl/24hrs per Kpler);
+         US-Iran road map to final deal established in Switzerland talks
+  [BEAR] PCE +4.1% YoY (highest since April 2023) — directly fuels FOMC rate hike narrative
+  [BEAR] Core PCE +3.4% YoY — above 3.3% forecast; reinforces 9/18 FOMC hike dots
+  [BEAR] QQQ at $725 range — rate-sensitive tech suppressed despite chip strength
+  [BEAR] VIX 18.24 (opened 19.13, range 18.04–20.34) — elevated on PCE shock
+
+--- THESIS VALIDATION | 8:45 AM CT ---
+QQQ: $725.39 (range $724.56–$726.80) | VIX: 18.24 (opened 19.13) | SPY: $737.16 (range $730.86–$739.95, +$3.92 from Jun 24 close)
+
+CONDITIONS:
+  [FAIL] QQQ > $735 — actual: $725.39 (−$9.61 below gate; hot PCE suppressing rate-sensitive tech despite MU surge)
+  [PASS] VIX < 25 — actual: 18.24 (elevated vs recent sessions but below gate)
+  [PASS] Iran deal intact — Strait traffic near pre-war levels (~20M bbl/24hrs); US-Iran road map confirmed; oil easing
+  [PASS] Market trending up — SPY +0.53% from Jun 24 close; broad market lifted by MU chip euphoria
+
+VERDICT: STAND DOWN
+
+REASONING: QQQ fails the primary $735 gate by nearly $10 — the hot May PCE print (+4.1% YoY, highest since April 2023) is directly reinforcing the FOMC hawkish dot-plot narrative (9/18 members projecting rate hikes) and keeping rate-sensitive tech under pressure. Micron's blowout (+19%) is lifting the chip sector and preventing broader market collapse — SPY is +0.53% — but QQQ's greater sensitivity to interest rate expectations means the rate hike signal dominates over chip-sector momentum today. With QQQ $9.61 below the gate and account capital at $15,710 (effectively buffer level), both conditions individually require a STAND DOWN.
+
+PIVOT SUGGESTIONS:
+  1. FRIDAY CHIP-MOMENTUM SETUP — If MU surge sustains and the 4.1% PCE print is absorbed (it was in-line with expectations, not a catastrophic shock), QQQ may recover above $735 on Friday as rate-hike fear fades. Gate check at 8:45 AM CT Fri: QQQ > $735, VIX < 18, SPY green. If passes, core-only entry (20-25 contracts max at $15,710 capital); no lottery leg at this size. Thesis: MU-momentum continuation + PCE digested. Invalidation: QQQ < $725.
+  2. BEAR PUT SETUP — If PCE rate-hike fears compound through the week and QQQ breaks below $718 (below today's range low), enter ATM 0DTE puts. Thesis mirrors T001-T002 (Jun 10-11): hot inflation + FOMC hawkish dots = QQQ multiple compression. Gate: QQQ < $718 at open, VIX > 20, S&P futures red. $10,212 max core; no lottery.
+  3. FULL STAND DOWN THROUGH END OF WEEK — Account at $15,710 is not meaningfully deployable for the YOLO 0DTE strategy (20-25 contracts max vs. historical 140-570 range). PCE and MU are pulling in opposite directions; QQQ's intraday range is tight ($724.56–$726.80) with no clear catalyst to move $10 in either direction today. Preserve $15,710 intact. Reassess strategy viability by end of Q2 (Friday close).
+
+NEXT: Human reviews in Claude Code to choose direction.`
+    },
     {
         date: '2026-06-24',
         note: `PRE-MARKET BRIEF — WEDNESDAY JUNE 24 | 8:45 AM CT
