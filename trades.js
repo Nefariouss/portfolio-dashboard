@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-25 08:45 CT — morning thesis validation; STAND DOWN; hot PCE; account $15,710 unchanged',
+    lastUpdated: '2026-06-25 15:30 CT — EOD settle; no positions; STAND DOWN confirmed; QQQ ~$707.35 (-0.46%); account $15,710 unchanged',
     trader: 'Claude'
 };
 
@@ -288,6 +288,15 @@ window.TRADES = [
 
 window.EOD_SNAPSHOTS = [
     {
+        date: '2026-06-25',
+        closes:  { SPY: 733.27, QQQ: 707.35, NVDA: null, TSLA: null, AAPL: 275.42 },
+        changes: { SPY: 0.00,   QQQ: -0.46,  NVDA: null, TSLA: null, AAPL: -6.13 },
+        account_value: 15710,
+        daily_pnl: 0,
+        vix_close: 18.06,
+        note: 'NO POSITIONS — STAND DOWN day. QQQ gapped up to ~$725 on MU blowout earnings (EPS $25.11 +23% beat, MU +19%), then collapsed as Apple (-6.13%) and Microsoft (-3.23%) announced consumer hardware price hikes citing higher memory costs (ironic: MU HBM boom → DRAM prices → AAPL/MSFT pass costs to consumers). Mag7 led Nasdaq lower. QQQ closed $707.35 (-0.46%), ending below Jun 24 close despite the MU surge. SPY near-flat at $733.27. VIX settled 18.06 (off intraday 19+ spike). STAND DOWN was correct: PCE +4.1% YoY hot print + QQQ $9.61 below $735 gate at 8:45 AM CT justified holding cash. Account $15,710 unchanged.'
+    },
+    {
         date: '2026-06-24',
         closes:  { SPY: 733.24, QQQ: 710.60, NVDA: null, TSLA: null, AAPL: null },
         changes: { SPY: -0.05,  QQQ: -0.43,  NVDA: null, TSLA: null, AAPL: null },
@@ -428,7 +437,33 @@ PIVOT SUGGESTIONS:
   2. BEAR PUT SETUP — If PCE rate-hike fears compound through the week and QQQ breaks below $718 (below today's range low), enter ATM 0DTE puts. Thesis mirrors T001-T002 (Jun 10-11): hot inflation + FOMC hawkish dots = QQQ multiple compression. Gate: QQQ < $718 at open, VIX > 20, S&P futures red. $10,212 max core; no lottery.
   3. FULL STAND DOWN THROUGH END OF WEEK — Account at $15,710 is not meaningfully deployable for the YOLO 0DTE strategy (20-25 contracts max vs. historical 140-570 range). PCE and MU are pulling in opposite directions; QQQ's intraday range is tight ($724.56–$726.80) with no clear catalyst to move $10 in either direction today. Preserve $15,710 intact. Reassess strategy viability by end of Q2 (Friday close).
 
-NEXT: Human reviews in Claude Code to choose direction.`
+NEXT: Human reviews in Claude Code to choose direction.
+
+--- SETTLED EOD — 2026-06-25 | 3:30 PM CT ---
+NO POSITIONS TODAY — STAND DOWN CONFIRMED CORRECT
+QQQ CLOSE: ~$707.35 (-0.46%) | SPY: $733.27 (flat) | VIX: 18.06
+DAILY P&L: $0
+ACCOUNT: $15,710 (unchanged)
+
+STAND DOWN was absolutely the right call. QQQ failed the $735 gate by $9.61 at 8:45 AM CT.
+The MU blowout pushed QQQ to ~$725 early in the session, but Apple (-6.13%) and Microsoft
+(-3.23%) both announced hardware price hikes citing higher DRAM/memory costs — the very same
+HBM boom that sent MU +19%. QQQ gave back all MU-driven morning gains and closed $707.35,
+BELOW its Jun 24 close of $710.60. SPY was near-flat; divergence = Mag7 drag on tech index.
+
+KEY MARKET EVENTS:
+  MU +19% — EPS $25.11 vs $20.39 est; blowout beat confirmed; chip sector surged early
+  AAPL -6.13% to $275.42 — Apple announced MacBook/iPad price hikes on higher memory costs
+  MSFT -3.23% — Microsoft raised Xbox prices for same reason; Mag7 selling accelerated
+  Nasdaq -0.46% | S&P 500 -0.01% (divergence: tech-heavy QQQ vs. broader SPY)
+  PCE +4.1% YoY confirmed hot (highest since Apr 2023) — rate hike narrative reinforced
+  VIX 18.06 (settled off 19+ intraday spike as PCE fears were priced in through the morning)
+
+END OF Q2 ASSESSMENT:
+  Account: $15,710 — effectively exhausted for YOLO 0DTE strategy
+  Q2 run: Started $100,000 → Peak $436,970 (+337%) → Final $15,710 (-96.4% drawdown from peak)
+  Next setup: Need QQQ sustained above $735 gate, VIX < 18, and a fresh high-conviction
+    catalyst before any position. At $15,710 capital: 20-25 contracts max; no lottery leg.`
     },
     {
         date: '2026-06-24',
