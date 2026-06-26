@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-26 08:45 CT — Morning thesis validation; STAND DOWN; QQQ ~$713.65 (below $735 gate); Iran deal actively challenged; account $15,710 unchanged',
+    lastUpdated: '2026-06-26 15:30 CT — EOD settle; STAND DOWN confirmed; no open positions; Q2 final close; account $15,710 unchanged',
     trader: 'Claude'
 };
 
@@ -288,6 +288,15 @@ window.TRADES = [
 
 window.EOD_SNAPSHOTS = [
     {
+        date: '2026-06-26',
+        closes:  { SPY: 731.58, QQQ: 712.18, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: -0.23,  QQQ: +0.68,  NVDA: null, TSLA: null, AAPL: null },
+        account_value: 15710,
+        daily_pnl: 0,
+        vix_close: 18.89,
+        note: 'NO POSITIONS — STAND DOWN. Q2 FINAL TRADING DAY. Global tech selloff on AI data center cost fears + reported OpenAI IPO delay to 2027. QQQ closed $712.18 (+0.68% from Jun 25 $707.35) — MU blowout chip momentum partially offset Mag7 continuation selling; intraday range $702.81–$715.84. SPY $731.58 (-0.23%). VIX 18.89. Nasdaq Composite -0.24%. STAND DOWN correct: QQQ failed $735 gate by $21 at 8:45 AM CT, Iran deal deteriorating (IRGC drone struck Singapore-flagged vessel, forced 3 tankers to turn around), SPY reversed hard from $738.89 open. Account $15,710 unchanged. End of Q2 2026.'
+    },
+    {
         date: '2026-06-25',
         closes:  { SPY: 733.27, QQQ: 707.35, NVDA: null, TSLA: null, AAPL: 275.42 },
         changes: { SPY: 0.00,   QQQ: -0.46,  NVDA: null, TSLA: null, AAPL: -6.13 },
@@ -450,7 +459,32 @@ PIVOT SUGGESTIONS:
      Gate: QQQ < $705, VIX > 21, WTI > $87, SPY red. $10,212 core in ATM puts; no lottery.
      Invalidation: IRGC stands down, oil drops below $82.
 
-NEXT: Human reviews in Claude Code to choose direction.`
+NEXT: Human reviews in Claude Code to choose direction.
+
+--- SETTLED EOD — 2026-06-26 | 3:30 PM CT ---
+NO POSITIONS TODAY — STAND DOWN CONFIRMED CORRECT
+QQQ CLOSE: $712.18 (+0.68%) | SPY: $731.58 (-0.23%) | VIX: 18.89
+DAILY P&L: $0
+ACCOUNT: $15,710 (unchanged)
+
+STAND DOWN was the right call. QQQ failed the $735 gate by $21 at 8:45 AM CT.
+Iran deal deterioration (IRGC drone strike on Singapore-flagged vessel, 3 oil tankers
+forced to turn around, IMO paused evacuation plan) directly invalidated the bull thesis.
+SPY reversed hard from its $738.89 gap-up open, closing $731.58 (-0.23%). QQQ closed
+$712.18, ending Q2 final trading day $22.82 below the $735 gate.
+
+KEY MARKET EVENTS:
+  Global tech sell-off — AI data center cost concerns + reported OpenAI IPO delayed to 2027
+  QQQ range $702.81–$715.84, close $712.18 (+0.68% from Jun 25 $707.35; MU blowout held floor)
+  Nasdaq Composite -0.24% | S&P 500 -0.05% to 7,354.02
+  VIX settled 18.89 (elevated; Iran uncertainty sustained through Q2 final session)
+  SpaceX fast-tracked addition to Russell 1000 index after close (+1.5% intraday)
+
+Q2 FINAL CLOSE:
+  Account: $15,710 (started Q2 at $100,000; peak $436,970 +337%; final -96.4% drawdown)
+  Iran deal remains the dominant macro risk for Q3 positioning.
+  Next window: Monday Jun 29 — gate check at 8:45 AM CT.
+    Require: QQQ > $735, VIX < 18, confirmed IRGC stand-down, SPY green.`
     },
     {
         date: '2026-06-25',
