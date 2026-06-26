@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-25 15:30 CT — EOD settle; no positions; STAND DOWN confirmed; QQQ ~$707.35 (-0.46%); account $15,710 unchanged',
+    lastUpdated: '2026-06-26 08:45 CT — Morning thesis validation; STAND DOWN; QQQ ~$713.65 (below $735 gate); Iran deal actively challenged; account $15,710 unchanged',
     trader: 'Claude'
 };
 
@@ -390,6 +390,68 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-06-26',
+        note: `PRE-MARKET BRIEF — FRIDAY JUNE 26 | 8:45 AM CT
+Q2 FINAL TRADING DAY
+
+ACCOUNT STATUS:
+  Account value: $15,710 (unchanged — no positions Jun 25, STAND DOWN)
+  Core budget (65%): $10,212 | Lottery (20%): $3,142 | Buffer (15%): $2,357 (NEVER TOUCH)
+  NOTE: Account is at effective buffer level. Meaningful 0DTE sizing not practical.
+
+CATALYST CALENDAR TODAY:
+  • UNIV. OF MICHIGAN CONSUMER SENTIMENT (FINAL) — due ~9:00-10:00 AM ET
+      Consensus final: 48.9 (unchanged from prelim; near historic lows)
+      1-yr inflation expectations: ~4.6%, 5-yr: ~3.4%
+      → No material directional catalyst; confirms stagflation narrative already priced in
+  • Q2 END — final institutional rebalancing, pension fund flows, quarter-end positioning
+      → Potential for late-day volatility as funds square books
+  • No other major economic releases
+
+MACRO BACKDROP:
+  [BEAR] QQQ ~$713.65 (range $704.45–$719.93) — well below $735 gate despite chip momentum
+         from MU blowout (+19% Jun 25); Mag7 selling (AAPL -6.1%, MSFT -3.5%, NVDA -1.6%) dominates
+  [BEAR] Iran deal ACTIVELY DETERIORATING: IRGC drone struck Singapore-flagged vessel in Strait;
+         IRGC forced 3 foreign oil tankers to turn around; IMO paused ship evacuation plan
+         after latest vessel attack — fundamental bull thesis under direct attack
+  [BEAR] SPY reversed from $738.89 open to $729.26 (−1.3% from open, −0.54% from Jun 25 close)
+  [BEAR] VIX 18.68 (range 17.72–19.95) — elevated; intraday spikes near 20 on Iran news
+  [BULL] MU blowout earnings (+19% Jun 25) — chip/semi sector momentum still providing some floor
+  [BULL] UMich final inline with prelim = no additional stagflation shock expected
+
+--- THESIS VALIDATION | 8:45 AM CT ---
+QQQ: ~$713.65 (range $704.45–$719.93) | VIX: 18.68 (range 17.72–19.95) | SPY: $729.26 (opened $738.89, −1.3% from open, −0.54% from Jun 25 close $733.27)
+
+CONDITIONS:
+  [FAIL] QQQ > $735 — actual: ~$713.65 (−$21.35 below gate; Mag7 selloff overrides chip-sector momentum)
+  [PASS] VIX < 25 — actual: 18.68 (elevated; intraday spikes to 19.95 on Iran deterioration)
+  [FAIL] Iran deal intact — IRGC drone struck Singapore-flagged vessel in Strait of Hormuz (Jun 26);
+         IRGC forced 3 oil tankers to turn around; IMO paused ship evacuation plan after vessel attack;
+         deal is actively challenged — fundamental bull thesis eroding in real time
+  [FAIL] Market trending up — SPY reversed hard from $738.89 open to $729.26 (−1.3%); QQQ same
+         pattern; tech/Mag7 under pressure; broad market red; no upward momentum
+
+VERDICT: STAND DOWN
+
+REASONING: Three of four gates fail. QQQ is $21 below the $735 price gate — Micron's blowout-driven chip-sector momentum is being overwhelmed by continued Mag7 selling (AAPL -6.1% Thursday, carrying over today) and fresh Iran deal deterioration. The IRGC drone strike on a vessel and tanker turnarounds directly contradict the "Strait open, oil falling" bull thesis that drove T006-T009. SPY reversed hard from its gap-up open — the broad market is red. Account at $15,710 (effectively at buffer level) makes meaningful sizing impractical regardless of thesis.
+
+PIVOT SUGGESTIONS:
+  1. END-OF-Q2 RESET — Account is $15,710 (15.7% of $100K starting; −96.4% from $436,970 peak).
+     Meaningful YOLO sizing not possible (20-25 contracts max vs. 140-570 historical). Consider a formal
+     capital reset or Q3 strategy pause. If Iran deal fully collapses next week (Strait re-closure
+     confirmed), the bear put mirrors T001-T002 but with severely constrained position size.
+  2. WAIT FOR GEOPOLITICAL CLARITY — If U.S. and Iran reach a resolution to the IRGC tanker incidents
+     (Vance/State Dept statement, confirmed IRGC stand-down), the bullish catalyst could re-ignite.
+     Gate check: QQQ > $735 + VIX < 17 + confirmed IRGC stand-down + SPY green. Core-only, no lottery
+     at $15,710. First viable window: Monday Jun 29 if weekend produces resolution.
+  3. BEAR PUT SETUP (IRAN COLLAPSE SCENARIO) — If IRGC incidents escalate to formal Strait re-closure
+     (oil > $90/bbl, WTI spiking), QQQ likely breaks below $700 (mirrors T001-T002 macro thesis).
+     Gate: QQQ < $705, VIX > 21, WTI > $87, SPY red. $10,212 core in ATM puts; no lottery.
+     Invalidation: IRGC stands down, oil drops below $82.
+
+NEXT: Human reviews in Claude Code to choose direction.`
+    },
     {
         date: '2026-06-25',
         note: `PRE-MARKET BRIEF — THURSDAY JUNE 25 | 8:45 AM CT
