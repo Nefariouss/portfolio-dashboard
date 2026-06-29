@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-29 08:45 CT — Thesis validation: STAND DOWN. QQQ ~$710 (gate $735 FAIL); VIX ~19.5 (PASS); Iran ceasefire fragile but holds, Doha talks disputed; SPY +1.1%; WTI $70.11 contained. No positions. Account $15,710.',
+    lastUpdated: '2026-06-29 15:30 CT — EOD settle: STAND DOWN confirmed. No positions. QQQ $723.00 (+1.52%), SPY ~$739.61 (+1.10%), VIX ~18.50. Account $15,710.',
     trader: 'Claude'
 };
 
@@ -287,6 +287,15 @@ window.TRADES = [
 // ═══════════════════════════════════════════════════════════════
 
 window.EOD_SNAPSHOTS = [
+    {
+        date: '2026-06-29',
+        closes:  { SPY: 739.61, QQQ: 723.00, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: +1.10,  QQQ: +1.52,  NVDA: null, TSLA: null, AAPL: null },
+        account_value: 15710,
+        daily_pnl: 0,
+        vix_close: 18.50,
+        note: 'NO POSITIONS — STAND DOWN. QQQ +1.52% to $723.00 (range $705.17–$724.58); SPY +1.10% to ~$739.61; Nasdaq 100 +~2%. QQQ still closed $12 below $735 gate — STAND DOWN correct. Comcast +24% (NBCUniversal spinoff), Rocket Lab +15.9% (Iridium acquisition), Tesla +8.06%, Alphabet +4.62%. Iran ceasefire holding; Doha talks Tuesday remain key binary. Holiday-shortened week: market closes 1 PM ET Thursday Jul 2 (NFP day), closed Fri Jul 3.'
+    },
     {
         date: '2026-06-26',
         closes:  { SPY: 731.58, QQQ: 712.18, NVDA: null, TSLA: null, AAPL: null },
@@ -571,7 +580,31 @@ PIVOT SUGGESTIONS:
   2. BEAR PUT SETUP (DOHA COLLAPSE SCENARIO) — If Doha talks officially collapse, QQQ likely breaks below $700 and WTI spikes above $80. Enter ATM 0DTE puts if QQQ < $700 at open with VIX > 22. Mirrors T001-T002 (Jun 10-11) macro thesis. $10,212 max core = ~3-4 contracts; no lottery. Invalidation: ceasefire statement causes QQQ to reclaim $710 within 30 min.
   3. FULL STAND DOWN THROUGH TUESDAY — Account at $15,710 is not meaningfully deployable. Any position (3-4 contracts) is noise against historical sizing (140-570 contracts). Monday has no economic data and Iran/Doha is binary/unknown. Preserve all $15,710 through Doha resolution, then reassess Wednesday morning with full clarity: Doha outcome + Warsh 9:30 AM ET + ADP 8:15 AM ET + ISM 10:00 AM ET.
 
-NEXT: Open Claude Code (cd C:\Projects\portfolio && claude) to execute or realign.`
+NEXT: Open Claude Code (cd C:\Projects\portfolio && claude) to execute or realign.
+
+--- SETTLED EOD — 2026-06-29 | 3:30 PM CT ---
+NO POSITIONS TODAY — STAND DOWN CONFIRMED CORRECT
+QQQ CLOSE: $723.00 (+1.52%) | SPY: ~$739.61 (+1.10%) | VIX: ~18.50
+DAILY P&L: $0
+ACCOUNT: $15,710 (unchanged)
+
+STAND DOWN was correct: QQQ failed the $735 gate by ~$12 even after the day's +1.52% rally.
+QQQ range $705.17–$724.58, closed $723.00 — still $12 below the $735 gate despite broad market strength.
+SPY +1.10% to ~$739.61. Nasdaq 100 +~2%.
+
+KEY MARKET EVENTS:
+  Comcast +24% — announced NBCUniversal spinoff; single largest non-mega-cap move of day
+  Rocket Lab +15.9% — $8B acquisition of Iridium (+25.4%) announced; space sector surge
+  Tesla +8.06%, Alphabet +4.62% — Mag7 recovery led by growth names
+  Holiday-shortened week: market closes 1 PM ET Thursday Jul 2 (NFP day); closed Fri Jul 3
+  Iran/Doha: ceasefire holding in practice; both sides reportedly still attending Tue Doha session
+
+NEXT: Watch Tuesday Doha talks — highest-conviction binary of the week.
+  [BULL] Success → oil -$5+ → QQQ recovery toward $725-730 → potential Wed bull window
+           Gate: QQQ > $735, VIX < 20, WTI < $72, Warsh neutral at 9:30 AM ET Wed
+  [BEAR] Collapse → escalation loop → oil >$85 → QQQ bear setup if breaks $700
+  Thu Jul 2: NFP 8:30 AM ET + market closes 1 PM ET — only ~90 min post-data window.
+  Account: $15,710 (~3-4 core contracts max). Meaningful sizing not practical.`
     },
     {
         date: '2026-06-26',
