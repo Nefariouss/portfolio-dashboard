@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-28 20:00 CT — Weekend pre-market brief for Mon Jun 29; Q3 opening week; US-Iran mutual strikes over weekend; Doha talks Tuesday; account $15,710',
+    lastUpdated: '2026-06-29 08:45 CT — Thesis validation: STAND DOWN. QQQ ~$710 (gate $735 FAIL); VIX ~19.5 (PASS); Iran ceasefire fragile but holds, Doha talks disputed; SPY +1.1%; WTI $70.11 contained. No positions. Account $15,710.',
     trader: 'Claude'
 };
 
@@ -551,7 +551,27 @@ WEEK OUTLOOK
 
   KEY WATCH: If Doha talks Tuesday produce confirmed ceasefire restoration + Strait terms
   agreed → Wednesday morning is the highest-conviction bull window this week.
-  Gate: QQQ > $725 + VIX < 20 + oil < $75 + Warsh neutral. Core-only (no lottery at $15,710).`
+  Gate: QQQ > $725 + VIX < 20 + oil < $75 + Warsh neutral. Core-only (no lottery at $15,710).
+
+--- THESIS VALIDATION | 8:45 AM CT ---
+QQQ: ~$710 (opened $707.13, range $702.81–$715.56) | VIX: ~19.5 (opened 19.70, range 18.20–20.72) | SPY: $738.44 (+1.1%) | WTI: $70.11
+
+CONDITIONS:
+  [FAIL] QQQ > $735 — actual: ~$710 (opened $707.13, high $715.56; ~$25 below gate)
+  [PASS] VIX < 25 — actual: ~19.5 (elevated but below gate)
+  [FAIL] Iran deal intact — ceasefire technically holds ("vessels moving freely" per US official Jun 28) but MOU interpretation under active dispute; Iran denies any Doha meetings scheduled; Trump says Tuesday Qatar session; situation described as "barely 11 days old and on shaky ground" — CONDITIONAL FAIL on thesis integrity
+  [PASS] Market trending up — SPY +1.1% at $738.44 (broad market rallying on Iran peace hopes); tech/QQQ lagging significantly
+
+VERDICT: STAND DOWN
+
+REASONING: QQQ fails the primary $735 gate by ~$25 — tech is severely underperforming the broad market rally. SPY is up 1.1% on Iran peace hopes but QQQ cannot overcome the combined weight of the FOMC hawkish overhang (9/18 members projecting 2026 rate hikes), hot PCE (+4.1% YoY), and persistent AI capex/Mag7 distribution. WTI at $70.11 confirms no oil shock despite weekend military exchanges — the ceasefire is holding in practice — but that tailwind alone is insufficient to move rate-sensitive tech $25 above gate. Account at $15,710 (effectively buffer level; ~3-4 core contracts max) makes meaningful sizing impractical regardless of verdict.
+
+PIVOT SUGGESTIONS:
+  1. DOHA TALKS WATCH (TUESDAY) — If US-Iran Doha session proceeds and produces any statement on Strait terms, oil may drop further toward $65-68 and QQQ could recover toward $720-725 on relief. Wednesday morning gate (reduced given thin account): QQQ > $725 + VIX < 20 + WTI < $72 + Warsh neutral at 9:30 AM ET speech. Core-only at $10,212 = ~3-4 contracts.
+  2. BEAR PUT SETUP (DOHA COLLAPSE SCENARIO) — If Doha talks officially collapse, QQQ likely breaks below $700 and WTI spikes above $80. Enter ATM 0DTE puts if QQQ < $700 at open with VIX > 22. Mirrors T001-T002 (Jun 10-11) macro thesis. $10,212 max core = ~3-4 contracts; no lottery. Invalidation: ceasefire statement causes QQQ to reclaim $710 within 30 min.
+  3. FULL STAND DOWN THROUGH TUESDAY — Account at $15,710 is not meaningfully deployable. Any position (3-4 contracts) is noise against historical sizing (140-570 contracts). Monday has no economic data and Iran/Doha is binary/unknown. Preserve all $15,710 through Doha resolution, then reassess Wednesday morning with full clarity: Doha outcome + Warsh 9:30 AM ET + ADP 8:15 AM ET + ISM 10:00 AM ET.
+
+NEXT: Open Claude Code (cd C:\Projects\portfolio && claude) to execute or realign.`
     },
     {
         date: '2026-06-26',
