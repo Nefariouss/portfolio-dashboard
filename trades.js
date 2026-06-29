@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-26 15:30 CT — EOD settle; STAND DOWN confirmed; no open positions; Q2 final close; account $15,710 unchanged',
+    lastUpdated: '2026-06-28 20:00 CT — Weekend pre-market brief for Mon Jun 29; Q3 opening week; US-Iran mutual strikes over weekend; Doha talks Tuesday; account $15,710',
     trader: 'Claude'
 };
 
@@ -399,6 +399,160 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-06-29',
+        note: `WEEKEND PRE-MARKET BRIEF — SUNDAY JUNE 28 | FOR MONDAY JUNE 29, 2026
+Q3 OPENING WEEK
+
+ACCOUNT STATUS:
+  Account value: $15,710 (unchanged — STAND DOWN all of Jun 23-26; Q2 closed flat)
+  Core budget (65%): $10,212 | Lottery (20%): $3,142 | Buffer (15%): $2,357 (NEVER TOUCH)
+  NOTE: Account is at effective buffer level. At $15,710: ~3-4 core contracts max
+        (vs. 140-570 historical). Lottery leg impractical. Sizing constraint is binding.
+  Q2 FINAL: $100,000 start → $436,970 peak (+337%) → $15,710 final (-84.3% from start; -96.4% from peak)
+
+══════════════════════════════════════════════════════
+WEEKEND FLASH: US-IRAN MUTUAL STRIKES — SITUATION CRITICAL
+══════════════════════════════════════════════════════
+
+This is the dominant risk for Monday's open. Escalation sequence over the weekend:
+
+  Jun 26 (Fri): Iran IRGC drones struck cargo ship in Strait of Hormuz.
+                Trump accused Iran of "foolish ceasefire breach."
+  Jun 27 (Sat): US launched retaliatory strikes on Iranian military infrastructure —
+                surveillance, communications, air defense sites, drone storage,
+                minelayer capabilities (5 coastal sites).
+  Jun 28 (Sun): Iran retaliated: ballistic missiles + drones fired at US Ali Al Salem
+                Air Base (Kuwait) AND US Fifth Fleet HQ (Bahrain). Escalation to US
+                military assets — major threshold crossed.
+                Iran canceled technical Strait of Hormuz talks.
+  Jun 28 (Sun): BOTH SIDES AGREED to halt attacks; resume talks TUESDAY in Doha, Qatar.
+                (Original venue Switzerland abandoned after flare-up.)
+
+  MARKET CONTEXT: WTI crude closed ~$69/bbl on FRIDAY (pre-weekend escalation —
+  traffic flow optimism priced in). Market must reprice weekend military exchanges Monday.
+  Oil likely spikes at open. If WTI reclaims >$80, inflation narrative reignites →
+  FOMC rate hike fears amplify → QQQ multiple compression.
+
+LAST FRIDAY CLOSE (Jun 26 — Q2 final):
+  QQQ: $712.18 (+0.68%) | SPY: $731.58 (-0.23%) | VIX: 18.89 | WTI: ~$68.86 (pre-escalation)
+  Nasdaq Composite: -0.24% | S&P 500: -0.05% | 10yr yield: ~4.50%
+  Context: QQQ closed $22.82 below the $735 gate even before weekend geopolitical shock.
+
+══════════════════════════════════════════════════════
+WEEK OF JUNE 29 – JULY 2 — CATALYST CALENDAR
+══════════════════════════════════════════════════════
+
+  Mon Jun 29: No major economic data. Iran/geopolitical headlines dominate open.
+              WATCH: Oil futures, S&P overnight futures, any ceasefire statements.
+
+  Tue Jun 30: Consumer Confidence (10:00 AM ET) | JOLTS Job Openings (10:00 AM ET)
+              Earnings: Nike (NKE), Constellation Brands (STZ)
+              ★ IRAN-US DOHA TALKS — both sides committed to resume Tuesday.
+                This is the highest-conviction binary catalyst of the week.
+                Resolution: oil -$5+ → QQQ relief rally → potential bull setup Wed/Thu.
+                Collapse: escalation loop → oil >$85 → QQQ breaks below $700.
+
+  Wed Jul  1: ADP Employment Change (8:15 AM ET) | ISM Manufacturing PMI (10:00 AM ET)
+              Construction Spending (10:00 AM ET)
+              ★ FED CHAIR WARSH SPEAKS — 9:30 AM ET (topic: Europe/global economy)
+                Any rate hike timeline signal would slam tech/QQQ.
+                Neutral tone = relief rally with Doha tailwind if talks succeeded Tuesday.
+              Earnings: General Mills (GIS)
+
+  Thu Jul  2: ★ JUNE NONFARM PAYROLLS + UNEMPLOYMENT RATE — 8:30 AM ET
+                Consensus: +172,000 jobs | Prior: ~May figure
+                Average Hourly Earnings (inflation read for FOMC)
+                Factory Orders
+              ⚠️ MARKET CLOSES EARLY AT 1:00 PM ET (Independence Day observed — Jul 4 falls Sat)
+                Bond market closes 2:00 PM ET
+                → Only ~2.5 hours of trading post-jobs print before close
+
+  Fri Jul  3: ★★ MARKET CLOSED — Independence Day holiday weekend
+
+══════════════════════════════════════════════════════
+MACRO BACKDROP
+══════════════════════════════════════════════════════
+
+  [BEAR] Weekend US-Iran mutual strikes — most intense military exchange since ceasefire signed Jun 17.
+         Iran fired missiles at US military bases (Kuwait, Bahrain). Market HAS NOT priced this.
+         VIX likely gaps above 20 at Monday open on geopolitical risk premium repricing.
+  [BEAR] Oil will reprice Monday: WTI ~$69 (pre-weekend) → likely +$5-10 spike at open.
+         If WTI > $80, Iran deal oil-price relief thesis evaporates. Stagflation re-ignites.
+  [BEAR] PCE +4.1% YoY (Jun 25) — highest since April 2023. Stagflation narrative intact.
+  [BEAR] FOMC hawkish: 9/18 members project 2026 rate hikes; Warsh withholding own dot.
+         Each hot data point (Jobs Thu) amplifies rate hike risk and compresses QQQ multiples.
+  [BEAR] QQQ tech selloff momentum: AI capex fears (Alphabet -7% Jun 22), OpenAI IPO delay
+         to 2027, AAPL/MSFT hardware price hikes on DRAM costs — Mag7 distribution ongoing.
+  [BEAR] QQQ $712.18 Friday — $22.82 below $735 gate BEFORE weekend geopolitical shock.
+  [BULL] Doha talks Tuesday — ceasefire framework still alive; both sides committed to meet.
+         A successful outcome is the only realistic bull catalyst this week.
+  [BULL] MU blowout (Jun 24 AH) — chip/semi sector bid providing floor; SMH and AI names hold.
+  [BULL] Jobs consensus +172K = in-line. Unlikely to add hawkish shock if near estimate.
+  [BULL] QQQ still above 50-day and 200-day MA support levels despite recent weakness.
+
+══════════════════════════════════════════════════════
+MONDAY JUNE 29 — TRADE FRAMEWORK
+══════════════════════════════════════════════════════
+
+GATE CHECK (verify at 8:45 AM CT with live data):
+  □ QQQ > $735? (last close $712.18 — needs $23 rally through weekend war escalation)
+  □ VIX < 25? (last close 18.89 — likely spikes 21-24+ at open on Iran news)
+  □ WTI oil price at open vs. Friday $68.86 — >$80 = bear thesis active; <$72 = contained
+  □ Iran/Doha: Any overnight ceasefire statement? Both sides holding cease-fire agreement?
+  □ S&P futures direction overnight (US futures will react to Iran/Kuwait/Bahrain news)
+
+─── SCENARIO A — STAND DOWN (default / near-certain for Monday) ───
+  Trigger: QQQ < $735 OR VIX > 25 OR oil spike without resolution signal
+  Action: Hold $15,710. Write STAND DOWN note. Push. Monitor Doha talks Tuesday.
+  Rationale: Weekend strikes are the most intense US-Iran military exchange since the ceasefire.
+             QQQ was already $22.82 below gate Friday — it needs a $23+ rally through a weekend
+             war escalation with oil repricing. Account at $15,710 is functionally at buffer
+             level regardless of direction. DEFAULT: STAND DOWN.
+
+─── SCENARIO B — BEAR PUTS (oil spike / Strait formal closure) ───
+  Trigger: QQQ opens < $700, VIX > 24, WTI > $82, Iran declares Strait transit blocked
+  Thesis: Weekend escalation → oil shock → inflation spike → FOMC hike acceleration →
+          QQQ multiple compression. Mirrors T001-T002 (Jun 10-11) bear thesis directionally.
+  SIZING CAVEAT: Account too thin for meaningful impact. $10,212 core max = ~3-4 ATM
+                 put contracts. Dollar PnL negligible even if directionally correct.
+  Invalidation: QQQ reclaims $708 in first 30 min (Doha pre-announcement, ceasefire holds)
+
+─── SCENARIO C — WATCH DOHA (TUESDAY IS THE KEY DAY) ───
+  If Monday = STAND DOWN, focus shifts entirely to Tuesday Doha talks.
+  [BULL — talks succeed]: Iran-US agree on Strait terms → oil -$5+ → QQQ relief rally →
+    bull call setup Wed morning if QQQ reclaims $725-730, Warsh neutral, VIX < 20.
+  [BEAR — talks collapse]: Full ceasefire breakdown → escalation loop → oil > $85 →
+    QQQ bear setup if < $700. Sizing constraint remains binding at $15,710.
+
+──────────────────────────────────────────────────────
+SIZING REALITY CHECK — Q3 CONSTRAINT
+──────────────────────────────────────────────────────
+
+  At $15,710 account value, meaningful YOLO 0DTE is not possible:
+  Core (65% = $10,212): ~3-4 contracts at $3.50 = $1,050-$1,400 deployed
+  Lottery (20% = $3,142): ~7-8 contracts at $0.40 = $280-$320 — noise, not a position
+  Reference: T009 core = 225 contracts, $67,500. Current core ≈ 1.5% of that size.
+
+  RECOMMENDATION: No position unless QQQ has reclaimed gate AND a high-conviction
+  directional catalyst exists. Doha success Tuesday is the only realistic trigger.
+  Preserve $15,710 for that window or a formal Q3 capital reset discussion.
+
+══════════════════════════════════════════════════════
+WEEK OUTLOOK
+══════════════════════════════════════════════════════
+
+  Monday:   STAND DOWN (default). Assess geopolitical repricing at open.
+  Tuesday:  DOHA TALKS — highest-conviction event. Week direction set here.
+  Wednesday: Warsh 9:30 AM ET + ISM + ADP. If Doha succeeded → potential bull setup.
+  Thursday: Jobs 8:30 AM + early close 1 PM. Tight 2.5-hr trading window post-print.
+              Hot jobs (>220K): FOMC hike fear → headwind. Weak (<140K): relief → tailwind.
+  Friday:   MARKET CLOSED. 4-day holiday weekend to reset for Q3.
+
+  KEY WATCH: If Doha talks Tuesday produce confirmed ceasefire restoration + Strait terms
+  agreed → Wednesday morning is the highest-conviction bull window this week.
+  Gate: QQQ > $725 + VIX < 20 + oil < $75 + Warsh neutral. Core-only (no lottery at $15,710).`
+    },
     {
         date: '2026-06-26',
         note: `PRE-MARKET BRIEF — FRIDAY JUNE 26 | 8:45 AM CT
