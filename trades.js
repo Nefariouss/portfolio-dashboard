@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-30 08:45 CT — Thesis validation: STAND DOWN. No positions. QQQ ~$714 (~$21 below $735 gate), VIX ~18.6, WTI $70.32. Doha talks murky/disputed. Account $15,710.',
+    lastUpdated: '2026-06-30 15:30 CT — EOD settle. STAND DOWN. No positions. QQQ closed ~$737 (+1.93%), SPY ~$748 (+1.13%), VIX 17.65. Doha talks ongoing, no final outcome. Account $15,710.',
     trader: 'Claude'
 };
 
@@ -288,6 +288,15 @@ window.TRADES = [
 
 window.EOD_SNAPSHOTS = [
     {
+        date: '2026-06-30',
+        closes:  { SPY: 748.00, QQQ: 737.00, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: +1.13,  QQQ: +1.93,  NVDA: null, TSLA: null, AAPL: null },
+        account_value: 15710,
+        daily_pnl: 0,
+        vix_close: 17.65,
+        note: 'NO POSITIONS — STAND DOWN. Q3 DAY 2. QQQ closed ~$737 (+1.93%) on strong Q2 end-of-quarter tech rally; Nasdaq Composite +2.07%, S&P 500 +1.18%. QQQ failed $735 gate at 8:45 AM CT (~$714) but rallied sharply through the session. Doha talks ongoing (indirect/technical via Qatari mediators) — no final Iran-US outcome announced. Prices are estimates based on available data; exact closes to be confirmed. STAND DOWN was correct: gate failed at validation time regardless of afternoon recovery.'
+    },
+    {
         date: '2026-06-29',
         closes:  { SPY: 739.61, QQQ: 723.00, NVDA: null, TSLA: null, AAPL: null },
         changes: { SPY: +1.10,  QQQ: +1.52,  NVDA: null, TSLA: null, AAPL: null },
@@ -435,7 +444,37 @@ PIVOT SUGGESTIONS:
   2. WEDNESDAY WARSH SPEECH SETUP - Fed Chair Warsh speaks 9:30 AM ET Wed Jul 1. If Doha produces even modest de-escalation overnight AND Warsh strikes a neutral/non-hawkish tone, combine with ADP/ISM data for a possible Wed bull gate (QQQ > $725, VIX < 20, oil < $70). Core-only at current capital; no lottery leg.
   3. CONTINUE STAND DOWN THROUGH JOBS REPORT - Thursday's NFP (8:30 AM ET) + early 1 PM ET close leaves only ~2.5 hours of trading. Given QQQ's persistent gate failure and thin $15,710 capital, preserving cash through the Doha/Warsh/Jobs sequence and reassessing Thursday or next week remains the lowest-risk path.
 
-NEXT: Open Claude Code (cd C:\\Projects\\portfolio && claude) to execute or realign.`
+NEXT: Open Claude Code (cd C:\\Projects\\portfolio && claude) to execute or realign.
+
+--- SETTLED EOD — 2026-06-30 | 3:30 PM CT ---
+NO POSITIONS TODAY — STAND DOWN CONFIRMED CORRECT
+QQQ CLOSE: ~$737 (+1.93%) | SPY: ~$748 (+1.13%) | VIX: ~17.65
+DAILY P&L: $0
+ACCOUNT: $15,710 (unchanged)
+
+STAND DOWN was correct. QQQ failed the $735 gate at 8:45 AM CT (~$714, $21 below gate).
+Despite the gate failure at validation time, QQQ rallied strongly through the session,
+closing ~$737 on Q2 end-of-quarter rebalancing and tech recovery momentum.
+Nasdaq Composite +2.07% to ~25,820. S&P 500 +1.18% to ~7,440. VIX eased to ~17.65.
+
+KEY MARKET EVENTS (June 30 / Q2 close):
+  Q2 performance: S&P 500 best quarter since 2020 (+~13.5% Q2); tech sector +28% Q2.
+  Dow Jones crossed 52,000 for first time (Alphabet debut in DJIA on Mon Jun 29).
+  Doha talks: US envoys (Witkoff/Kushner) in Qatar meeting Qatari mediators separately
+    from Iranian delegation — no direct US-Iran meeting; no final outcome announced today.
+    Talks continue; both sides still technically at the table through mediators.
+  WTI oil holding ~$70 range; Strait of Hormuz ceasefire intact in practice.
+
+STAND DOWN RECORD (Jun 23 – Jun 30): 6 consecutive STAND DOWN days. Account flat at $15,710.
+
+Q3 OUTLOOK:
+  Account: $15,710 (effectively buffer level; ~3-4 core contracts max; lottery impractical).
+  Next key event: Thursday Jul 2 — June NFP (8:30 AM ET) + market closes 1 PM ET (holiday).
+    Hot jobs (>220K): FOMC rate hike fear → QQQ headwind.
+    Weak jobs (<140K): disinflation signal → potential relief rally. Only ~2.5 hrs post-data.
+  Friday Jul 3: MARKET CLOSED (Independence Day weekend).
+  Doha outcome remains dominant binary for Strait/oil thesis in Q3.
+  Gate for any entry: QQQ > $735, VIX < 20, confirmed catalyst. Core-only at $15,710.`
     },
     {
         date: '2026-06-29',
