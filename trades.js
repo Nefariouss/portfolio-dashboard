@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-29 15:30 CT — EOD settle: STAND DOWN confirmed. No positions. QQQ $723.00 (+1.52%), SPY ~$739.61 (+1.10%), VIX ~18.50. Account $15,710.',
+    lastUpdated: '2026-06-30 08:45 CT — Thesis validation: STAND DOWN. No positions. QQQ ~$714 (~$21 below $735 gate), VIX ~18.6, WTI $70.32. Doha talks murky/disputed. Account $15,710.',
     trader: 'Claude'
 };
 
@@ -408,6 +408,35 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-06-30',
+        note: `PRE-MARKET BRIEF — TUESDAY JUNE 30 | 8:45 AM CT
+DOHA TALKS DAY
+
+ACCOUNT STATUS:
+  Account value: $15,710 (unchanged — STAND DOWN every session Jun 23-29)
+  Core budget (65%): $10,212 | Lottery (20%): $3,142 | Buffer (15%): $2,357 (NEVER TOUCH)
+
+--- THESIS VALIDATION | 8:45 AM CT ---
+QQQ: ~$714 (opened $713.98, today's range ~$705.17-$720.91) | VIX: ~18.6 (opened 18.60, range 17.49-19.45) | SPY: prior close $739.96 (-0.14% Mon); S&P futures only marginally green | WTI: $70.32 (range $70.12-$70.86, drifting toward $70 on Doha hopes)
+
+CONDITIONS:
+  [FAIL] QQQ > $735 - actual: ~$714 (~$21 below gate; has not reclaimed gate since Jun 16)
+  [PASS] VIX < 25 - actual: ~18.6
+  [FAIL] Iran deal intact / Doha catalyst - conflicting signals: Qatar's FM says US envoys (Witkoff/Kushner) will NOT meet Iranian officials directly; Iran says no negotiation meetings are scheduled at any level. Only indirect, Qatari-mediated "technical talks" are planned to produce documents for future high-level talks. The binary catalyst the weekend brief flagged as "highest-conviction of the week" has NOT materialized as a clean bullish trigger - it is murkier than expected.
+  [PASS] Market trending up - S&P/Nasdaq Composite marginally green (S&P +0.03%, Nasdaq Composite +0.29%) on stop-attacks de-escalation headlines, but Dow -0.24% - mixed, weak tailwind at best
+
+VERDICT: STAND DOWN
+
+REASONING: QQQ remains ~$21 below the $735 gate, continuing the pattern since Jun 23 - chip/Mag7 weakness and the FOMC hawkish overhang are still suppressing rate-sensitive tech even as broader risk sentiment improves modestly on Iran de-escalation headlines. Today's Doha session, billed as the week's highest-conviction catalyst, is unfolding as indirect/technical-level talks with the US and Iran publicly disputing whether any meeting is even happening - that does not clear the bar for a high-conviction bullish catalyst. VIX is contained and oil is drifting lower, which is constructive, but neither offsets the QQQ price gate failure. Account remains at $15,710 (effectively buffer level), reinforcing STAND DOWN regardless of thesis.
+
+PIVOT SUGGESTIONS:
+  1. WAIT FOR DOHA OUTCOME CONFIRMATION - If later today or tomorrow produces a confirmed joint statement (not just "technical talks") on Strait/ceasefire terms, oil could break decisively below $70 and QQQ could mount a relief rally toward $725+. Re-check gate before any entry: QQQ > $735, VIX < 20, confirmed (not disputed) talks outcome.
+  2. WEDNESDAY WARSH SPEECH SETUP - Fed Chair Warsh speaks 9:30 AM ET Wed Jul 1. If Doha produces even modest de-escalation overnight AND Warsh strikes a neutral/non-hawkish tone, combine with ADP/ISM data for a possible Wed bull gate (QQQ > $725, VIX < 20, oil < $70). Core-only at current capital; no lottery leg.
+  3. CONTINUE STAND DOWN THROUGH JOBS REPORT - Thursday's NFP (8:30 AM ET) + early 1 PM ET close leaves only ~2.5 hours of trading. Given QQQ's persistent gate failure and thin $15,710 capital, preserving cash through the Doha/Warsh/Jobs sequence and reassessing Thursday or next week remains the lowest-risk path.
+
+NEXT: Open Claude Code (cd C:\\Projects\\portfolio && claude) to execute or realign.`
+    },
     {
         date: '2026-06-29',
         note: `WEEKEND PRE-MARKET BRIEF — SUNDAY JUNE 28 | FOR MONDAY JUNE 29, 2026
