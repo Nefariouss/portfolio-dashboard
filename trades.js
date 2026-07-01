@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-06-30 15:30 CT — EOD settle. STAND DOWN. No positions. QQQ closed ~$737 (+1.93%), SPY ~$748 (+1.13%), VIX 17.65. Doha talks ongoing, no final outcome. Account $15,710.',
+    lastUpdated: '2026-07-01 08:45 CT — Morning validation. STAND DOWN. QQQ opened $713.98 ($21 below $735 gate). Warsh hawkish at ECB Sintra. ADP +98K miss. Account $15,710.',
     trader: 'Claude'
 };
 
@@ -417,6 +417,56 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-07-01',
+        note: `PRE-MARKET BRIEF — WEDNESDAY JULY 1 | 8:45 AM CT
+Q3 DAY 2 — WARSH ECB SINTRA / ADP MISS / ISM PENDING
+
+ACCOUNT STATUS:
+  Account value: $15,710 (unchanged — STAND DOWN every session Jun 23-30)
+  Core budget (65%): $10,212 | Lottery (20%): $3,142 | Buffer (15%): $2,357 (NEVER TOUCH)
+  NOTE: Account at effective buffer level. ~3-4 core contracts max. No lottery practical.
+  Override status: ONE-TIME OVERRIDE for 2026-06-17 has expired — STANDARD mode (human decides).
+
+CATALYST CALENDAR TODAY:
+  • ADP EMPLOYMENT — RELEASED 8:15 AM ET:
+      June private payrolls +98K vs +118K expected (MISS — labor cooling)
+      Annual pay: +4.4% YoY (job stayers), +6.6% (job switchers)
+      → Dovish signal for rate hikes; mild growth concern
+  • FED CHAIR WARSH — ECB FORUM SINTRA — 9:30 AM ET (LIVE AT VALIDATION TIME):
+      "Inflation too high" — hawkish lean
+      Declined to hint at July rate decision
+      Reshaping Fed communications, reducing forward guidance
+  • ISM MANUFACTURING PMI — 10:00 AM ET (not yet released)
+  • CONSTRUCTION SPENDING — 10:00 AM ET (not yet released)
+
+IRAN/DOHA UPDATE:
+  Indirect technical talks continuing through Qatar mediators (Tuesday + today).
+  Witkoff + Kushner met Qatari Emir Jun 30; consultations on MOU implementation + frozen assets ongoing.
+  Trump: "very good meetings" — positive framing; Strait of Hormuz remains open.
+  No formal signed resolution yet; still indirect/lower-level technical sessions.
+
+--- THESIS VALIDATION | 8:45 AM CT ---
+QQQ: ~$714 (opened $713.98) | VIX: ~17.5 (opened 17.54, range 16.27–17.75) | SPY: ~$741 (opened $741.29, ~−0.9% from $748 prior close)
+
+CONDITIONS:
+  [FAIL] QQQ > $735 — actual: ~$714 (opened $713.98; $21 below gate; 7th consecutive session below $735)
+  [PASS] VIX < 25 — actual: ~17.5 (contained; not elevated)
+  [PASS] Iran deal intact — Doha indirect talks active; Trump "very good meetings"; MOU framework intact; Strait open
+  [FAIL] Market trending up — SPY opened $741.29 (~−0.9% from $748 prior close); broad market lower; waiting on Warsh + ISM
+  [FAIL] 15-min price action — QQQ at ~$714 trending flat-to-lower; Warsh "inflation too high" hawkish remarks suppressing open
+
+VERDICT: STAND DOWN
+
+REASONING: QQQ fails the $735 price gate for the 7th consecutive session, opening at $713.98 — $21 below threshold with no early momentum to close the gap. Fed Chair Warsh is speaking live at ECB Forum Sintra during the validation window with a hawkish lean: "inflation too high," declined to hint at July rate direction, continuing to reshape Fed communication away from forward guidance. ADP came in soft at +98K (vs +118K est) — a labor-cooling signal that is dovish for hikes but growth-negative, not a clean bullish catalyst. Doha talks are the lone bright spot: Trump's "very good meetings" framing is constructive and the Strait remains open, but these are still indirect/technical-level sessions with no formal resolution announced. With account at $15,710 (effectively buffer level), forcing an entry on a gate-fail day against a live hawkish Warsh speech is asymmetrically bad.
+
+PIVOT SUGGESTIONS:
+  1. ISM MANUFACTURING WATCH (10 AM ET) — If ISM PMI prints above 52 (expansion), the "ADP labor cooling + ISM expansion" Goldilocks narrative may spark an afternoon QQQ bounce. Not actionable today (QQQ $21 below gate) but key for Thursday context: QQQ closing above $725 today would indicate recovering momentum and make a NFP-day gate check viable Friday morning... wait, Friday is closed. Thursday is the last trading day before the 4-day holiday.
+  2. THURSDAY NFP SETUP (Jul 2, 8:30 AM ET) — Today's ADP miss (+98K) raises probability of a soft NFP print Thursday. If NFP < 140K, market may read as "labor cooling = Warsh won't hike July" → QQQ relief rally. Gate (standard CLAUDE.md): QQQ > $735 at open, VIX < 20. CAVEAT: market closes 1 PM ET (only ~90 min post-data print). Core-only at $10,212 (~3-4 contracts); no lottery. Thin execution window; only proceed if gate passes cleanly.
+  3. HOLIDAY WEEK FULL STAND DOWN — Warsh hawkish at Sintra + FOMC dot-plot overhang + 7-session QQQ sub-gate streak + persistent tech/Mag7 distribution argue against forcing a trade this week. Thursday is a 2.5-hour early-close day — not ideal for 0DTE. Preserve $15,710 through the 4-day holiday weekend (market closed Fri Jul 3) and reassess Jul 7+ with Q3 clarity: post-NFP data absorbed, Doha outcome firmed, fresh weekly options structure.
+
+NEXT: Open Claude Code (cd C:\\Projects\\portfolio && claude) to execute or realign.`
+    },
     {
         date: '2026-06-30',
         note: `PRE-MARKET BRIEF — TUESDAY JUNE 30 | 8:45 AM CT
