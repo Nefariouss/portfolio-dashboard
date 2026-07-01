@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-07-01 08:45 CT — Morning validation. STAND DOWN. QQQ opened $713.98 ($21 below $735 gate). Warsh hawkish at ECB Sintra. ADP +98K miss. Account $15,710.',
+    lastUpdated: '2026-07-01 15:30 CT — EOD settle. STAND DOWN confirmed. No positions. QQQ closed ~$732 (-0.68%). Account $15,710.',
     trader: 'Claude'
 };
 
@@ -288,6 +288,15 @@ window.TRADES = [
 
 window.EOD_SNAPSHOTS = [
     {
+        date: '2026-07-01',
+        closes:  { SPY: 748.50, QQQ: 732.00, NVDA: null, TSLA: null, AAPL: null },
+        changes: { SPY: +0.07,  QQQ: -0.68,  NVDA: null, TSLA: null, AAPL: null },
+        account_value: 15710,
+        daily_pnl: 0,
+        vix_close: 17.90,
+        note: 'NO POSITIONS — STAND DOWN. Q3 DAY 2. QQQ closed ~$732 (-0.68%) as tech underperformed broad market. QQQ gapped hard at open ($713.98, -3.1% from $737 prior close) on Warsh ECB Sintra hawkish remarks ("inflation too high") + ADP miss (+98K vs +118K est), then recovered through session. S&P 500 and Dow rose slightly to start Q3 (comms/financials led: Meta +10% on new cloud computing business). Nasdaq Composite -0.66%. ISM Manufacturing 53.3 (slight miss from 54.0 prior); prices paid 73.0 (sharply down from 82.1 — disinflationary signal). VIX ~17.90. STAND DOWN was correct: QQQ opened $21 below gate and never reclaimed $735 on the day. Prices are estimates; exact closes to be confirmed.'
+    },
+    {
         date: '2026-06-30',
         closes:  { SPY: 748.00, QQQ: 737.00, NVDA: null, TSLA: null, AAPL: null },
         changes: { SPY: +1.13,  QQQ: +1.93,  NVDA: null, TSLA: null, AAPL: null },
@@ -465,7 +474,39 @@ PIVOT SUGGESTIONS:
   2. THURSDAY NFP SETUP (Jul 2, 8:30 AM ET) — Today's ADP miss (+98K) raises probability of a soft NFP print Thursday. If NFP < 140K, market may read as "labor cooling = Warsh won't hike July" → QQQ relief rally. Gate (standard CLAUDE.md): QQQ > $735 at open, VIX < 20. CAVEAT: market closes 1 PM ET (only ~90 min post-data print). Core-only at $10,212 (~3-4 contracts); no lottery. Thin execution window; only proceed if gate passes cleanly.
   3. HOLIDAY WEEK FULL STAND DOWN — Warsh hawkish at Sintra + FOMC dot-plot overhang + 7-session QQQ sub-gate streak + persistent tech/Mag7 distribution argue against forcing a trade this week. Thursday is a 2.5-hour early-close day — not ideal for 0DTE. Preserve $15,710 through the 4-day holiday weekend (market closed Fri Jul 3) and reassess Jul 7+ with Q3 clarity: post-NFP data absorbed, Doha outcome firmed, fresh weekly options structure.
 
-NEXT: Open Claude Code (cd C:\\Projects\\portfolio && claude) to execute or realign.`
+NEXT: Open Claude Code (cd C:\\Projects\\portfolio && claude) to execute or realign.
+
+--- SETTLED EOD — 2026-07-01 | 3:30 PM CT ---
+NO POSITIONS TODAY — STAND DOWN CONFIRMED CORRECT
+QQQ CLOSE: ~$732.00 (-0.68%) | SPY: ~$748.50 (+0.07%) | VIX: ~17.90
+DAILY P&L: $0
+ACCOUNT: $15,710 (unchanged)
+
+STAND DOWN was correct. QQQ failed the $735 gate at 8:45 AM CT (opened $713.98, -3.1%
+from $737 prior close) on Warsh hawkish ECB Sintra remarks + ADP miss. QQQ recovered
+substantially through the session but still closed ~$732, $5 below gate and $5 below
+prior close — confirmed the gate call was right even with the afternoon recovery.
+
+KEY MARKET EVENTS (July 1 — Q3 Day 2):
+  Meta +10% — announced new cloud computing business selling surplus AI compute capacity;
+    largest single-day move for Meta in 2026; lifted S&P 500 comms sector.
+  S&P 500 / Dow: slight gain (comms + financials led); Dow +~14 pts, S&P 500 +~0.2-0.3%.
+  Nasdaq Composite: -0.66% (tech underperformed as rate-sensitive names stayed pressured).
+  ISM Manufacturing PMI: 53.3 (slight miss, prior 54.0) — still in expansion but softening.
+  ISM Prices Paid: 73.0 (sharply down from 82.1) — strongest disinflationary signal in months.
+  Warsh ECB Sintra: hawkish framing, "inflation too high," declined to hint at July rate decision.
+  ADP +98K (vs +118K est) — labor cooling; dovish for rate hikes but growth-negative.
+
+THURSDAY SETUP (Jul 2 — EARLY CLOSE 1 PM ET):
+  * JUNE NFP — 8:30 AM ET. Consensus ~+172K. ADP miss (+98K) raises soft-print probability.
+    Hot (>220K): FOMC hike fear -> QQQ headwind.
+    Weak (<140K): disinflation signal -> potential QQQ relief rally.
+  * Market closes 1 PM ET (Independence Day weekend). Only ~90 min trading post-print.
+  Gate (standard): QQQ > $735, VIX < 20. Core-only (~3-4 contracts at $15,710). No lottery.
+  ISM Prices Paid 73.0 (down from 82.1) is a notable dovish signal for NFP context.
+  After Thursday: market closed Fri Jul 3. 4-day holiday weekend. Reassess Jul 7+.
+
+STAND DOWN RECORD (Jun 23 - Jul 1): 7 consecutive STAND DOWN days. Account flat at $15,710.`
     },
     {
         date: '2026-06-30',
