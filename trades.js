@@ -7,7 +7,7 @@
 window.PORTFOLIO = {
     startingCapital: 100000,
     mode: 'autonomous',
-    lastUpdated: '2026-07-01 15:30 CT — EOD settle. STAND DOWN confirmed. No positions. QQQ closed ~$732 (-0.68%). Account $15,710.',
+    lastUpdated: '2026-07-02 08:45 CT — Morning thesis validation. HOLD verdict: QQQ ~$736.40 (+1.73%), all 4 gates pass (barely). NFP +57K miss (dovish). Early close 1 PM ET. Account $15,710. Human must authorize trade.',
     trader: 'Claude'
 };
 
@@ -426,6 +426,57 @@ window.EOD_SNAPSHOTS = [
 // ═══════════════════════════════════════════════════════════════
 
 window.DAILY_NOTES = [
+    {
+        date: '2026-07-02',
+        note: `PRE-MARKET BRIEF — THURSDAY JULY 2 | 8:45 AM CT
+NFP DAY — EARLY CLOSE 1 PM ET
+
+ACCOUNT STATUS:
+  Account value: $15,710 (unchanged — STAND DOWN every session Jun 23–Jul 1; 8 consecutive)
+  Core budget (65%): $10,212 | Lottery (20%): $3,142 | Buffer (15%): $2,357 (NEVER TOUCH)
+  NOTE: Account at effective buffer level. ~3-4 core contracts max. Lottery impractical at this size.
+
+CATALYST CALENDAR TODAY:
+  • JUNE NFP — RELEASED 8:30 AM ET:
+      +57,000 jobs vs ~100,000 consensus (SIGNIFICANT MISS)
+      Prior revisions: Apr −31K, May −43K → 74K fewer jobs than previously reported
+      Unemployment rate: 4.2% (↓ from 4.3%)
+      Average hourly earnings: awaiting detail
+      → Headline: "Weak June Jobs Report Quiets the Rate-Hike Conversation" (Kiplinger)
+      → Dovish signal: labor market cooling reduces FOMC rate-hike urgency sharply
+  • EARLY MARKET CLOSE — 1:00 PM ET (Independence Day observed; Fri Jul 3 closed)
+      Only ~3.5 hours of trading from 9:30 AM ET open; 0DTE settles at early close
+      Whatever narrative dominates at 1 PM bell is locked in for the 4-day holiday weekend
+
+IRAN/DOHA UPDATE:
+  Indirect US-Iran talks in Doha concluded with "positive progress" (Qatar mediators).
+  Both sides agreed to open a communication channel to ensure MOU implementation.
+  Strait of Hormuz traffic holding; ceasefire in practice intact.
+  Frozen assets: Iran claims partial release agreed; US officials denied — disputed signals.
+  Next meeting: after Khamenei funeral processions (begin Saturday, 6 days → ~Jul 8-9 window).
+
+--- THESIS VALIDATION | 8:45 AM CT ---
+QQQ: ~$736.40 (+1.73%) | VIX: ~16–17 (declining) | SPY: green (all indices rising post-NFP)
+
+CONDITIONS:
+  [PASS] QQQ > $735 — actual: ~$736.40 (RAZOR-THIN margin: only $1.40 above gate on NFP rally)
+  [PASS] VIX < 25 — actual: ~16–17 (declining on dovish print; well clear of 25)
+  [PASS] Iran deal intact — Doha talks positive progress, communication channel established, Strait open
+  [PASS] Market trending up — Dow, S&P 500, Nasdaq all rising; "bad news is good news" dovish read
+
+VERDICT: HOLD
+
+REASONING: All four standard gates pass for the first time since June 22. The +57K NFP (massive miss vs ~100K consensus, plus 74K in downward revisions across April and May) is being read unambiguously as dovish — labor market cooling sharply reduces FOMC rate-hike probability, providing direct relief to rate-sensitive tech/QQQ. VIX is declining, all major indices are rising, and the Iran Doha talks concluded constructively with a communication channel established and the Strait holding. QQQ has cleared the $735 gate at $736.40.
+
+CRITICAL CAVEATS FOR HUMAN REVIEW:
+  1. Gate clearance is razor-thin ($1.40); any reversal on "recession fear" re-read pushes QQQ back below gate
+  2. Early close at 1 PM ET — only ~3.5 hours of trading from open; 0DTE window is compressed
+  3. Account at $15,710 = ~3 core contracts max (~$10,212 core budget at ~$3.50 ATM); lottery impractical
+  4. NFP miss narrative can flip: "dovish" (rate hike dead) vs "recession fear" (demand collapse) — risk of mid-session reversal
+  5. No autonomous override active — STANDARD mode; human must authorize any position
+
+NEXT: Open Claude Code (cd C:\\Projects\\portfolio && claude) to execute or realign.`
+    },
     {
         date: '2026-07-01',
         note: `PRE-MARKET BRIEF — WEDNESDAY JULY 1 | 8:45 AM CT
